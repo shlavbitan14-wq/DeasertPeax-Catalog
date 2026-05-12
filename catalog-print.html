@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<title>Desert Peax — קטלוג B2B 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+@page{size:A4 portrait;margin:13mm 12mm 16mm}
+:root{--navy:#1B3F82;--navy-d:#0F2455;--sand:#C8B89A;--sand-l:#F0E8DC;--cognac:#8B5E3C;--dark:#1A1A1A;--mid:#4B5563;--muted:#9CA3AF;--gold:#C9A84C;--green:#15803D}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:13px}
+body{font-family:'Heebo',Arial,sans-serif;direction:rtl;text-align:right;color:var(--dark);background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.screen-bar{position:fixed;top:0;left:0;right:0;z-index:9999;background:var(--navy-d);color:#fff;padding:.8rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;font-family:'Heebo',sans-serif;font-size:.88rem}
+.screen-bar strong{font-weight:800;color:var(--sand)}
+.print-btn{background:var(--sand);color:var(--navy-d);border:none;border-radius:50px;font-family:inherit;font-size:.88rem;font-weight:800;padding:.45rem 1.5rem;cursor:pointer}
+.print-btn:hover{background:#fff}
+@media print{.screen-bar{display:none}body{padding-top:0!important}}
+body{padding-top:52px}
+.page{width:100%;page-break-after:always;page-break-inside:avoid;overflow:hidden}
+.page:last-child{page-break-after:avoid}
+
+/* COVER */
+.cover{position:relative;height:267mm;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:var(--navy-d)}
+.cover-bg{position:absolute;inset:0;background:url('תמונות/photo_5771754280355303096_y.jpg') center 30%/cover no-repeat;filter:brightness(.38)}
+.cover-grad{position:absolute;inset:0;background:linear-gradient(170deg,rgba(15,36,85,.65) 0%,rgba(0,0,0,.55) 100%)}
+.cover-body{position:relative;z-index:2;padding:18mm 14mm;color:#fff}
+.cover-logo-pill{display:inline-flex;background:rgba(255,255,255,.95);border-radius:14px;padding:10px 22px;margin-bottom:14mm;box-shadow:0 6px 24px rgba(0,0,0,.3)}
+.cover-logo-pill img{height:52px;filter:none}
+.cover-label{font-size:.6rem;font-weight:700;letter-spacing:.38em;text-transform:uppercase;color:var(--sand);margin-bottom:4mm}
+.cover-h1{font-size:3.8rem;font-weight:900;line-height:.93;margin-bottom:5mm;text-shadow:0 3px 20px rgba(0,0,0,.4)}
+.cover-sub{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.72);max-width:115mm;line-height:1.75;margin-bottom:9mm}
+.cover-meta{display:flex;gap:6mm;align-items:center}
+.cover-tag{background:var(--sand);color:var(--navy-d);font-size:.68rem;font-weight:800;letter-spacing:.08em;padding:4px 14px;border-radius:20px}
+.cover-year{font-size:.78rem;color:rgba(255,255,255,.45);font-weight:500}
+.cover-strip{position:absolute;bottom:0;left:0;right:0;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);height:28mm}
+.cover-strip div{overflow:hidden}
+.cover-strip div img{width:100%;height:100%;object-fit:cover;filter:brightness(.6) saturate(.8)}
+
+/* PAGE HEADER */
+.page-hd{display:flex;align-items:center;justify-content:space-between;padding-bottom:3.5mm;margin-bottom:5mm;border-bottom:1px solid rgba(0,0,0,.09)}
+.page-hd-logo{height:26px;mix-blend-mode:multiply}
+.page-hd-title{font-size:.62rem;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+
+/* SECTION HEADER */
+.sec-hd{display:flex;align-items:baseline;gap:4mm;border-bottom:2px solid var(--sand-l);padding-bottom:2.5mm;margin-bottom:4.5mm}
+.sec-lbl{font-size:.58rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--cognac);flex-shrink:0}
+.sec-ttl{font-size:1.35rem;font-weight:900;color:var(--navy-d)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:7mm;align-items:start;margin-bottom:5mm}
+.about-photo{border-radius:10px;overflow:hidden}
+.about-photo img{width:100%;height:58mm;object-fit:cover}
+.about-copy h2{font-size:1.15rem;font-weight:900;color:var(--navy-d);line-height:1.2;margin-bottom:3mm}
+.about-copy p{font-size:.8rem;color:var(--mid);line-height:1.75;margin-bottom:3.5mm}
+.about-bullets{list-style:none}
+.about-bullets li{font-size:.76rem;color:var(--dark);padding:1.8mm 0;border-bottom:1px solid var(--sand-l);display:flex;gap:2.5mm;align-items:center}
+.about-bullets li::before{content:'—';color:var(--cognac);font-weight:700;flex-shrink:0}
+.life-strip{display:grid;grid-template-columns:repeat(4,1fr);height:22mm;gap:2mm;border-radius:8px;overflow:hidden;margin:4mm 0}
+.life-strip div{overflow:hidden}
+.life-strip div img{width:100%;height:100%;object-fit:cover}
+
+/* B2B BLOCK */
+.b2b-block{background:var(--navy-d);border-radius:10px;padding:6mm 7mm;color:#fff;display:grid;grid-template-columns:1fr 2fr;gap:6mm;align-items:center}
+.b2b-hl{font-size:1.55rem;font-weight:900;line-height:.93}
+.b2b-items{display:grid;grid-template-columns:1fr 1fr;gap:3mm 5mm}
+.b2b-item{display:flex;gap:2.5mm;align-items:flex-start}
+.b2b-num{font-size:.56rem;font-weight:800;color:var(--sand);border:1.5px solid rgba(200,184,154,.35);border-radius:4px;padding:2px 5px;flex-shrink:0;margin-top:1px}
+.b2b-item h4{font-size:.76rem;font-weight:700;color:var(--sand);margin-bottom:1px}
+.b2b-item p{font-size:.66rem;color:rgba(255,255,255,.52);line-height:1.55}
+.b2b-foot{font-size:.65rem;color:rgba(255,255,255,.38);margin-top:4mm;border-top:1px solid rgba(255,255,255,.08);padding-top:3mm;text-align:center}
+
+/* PRODUCTS */
+.products-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm 4mm}
+.pc{border:1px solid rgba(0,0,0,.09);border-radius:10px;overflow:hidden;break-inside:avoid;display:flex;flex-direction:column}
+.pc-img{height:40mm;overflow:hidden;background:var(--sand-l);flex-shrink:0}
+.pc-img img{width:100%;height:100%;object-fit:cover}
+.pc-img-ph{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;background:linear-gradient(145deg,#0F2455,#1B3F82)}
+.pc-body{padding:3mm 3.5mm;flex:1;display:flex;flex-direction:column}
+.pc-cat{font-size:.56rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--cognac);margin-bottom:.8mm}
+.pc-name{font-size:.92rem;font-weight:800;color:var(--navy-d);margin-bottom:1.5mm;line-height:1.2}
+.pc-desc{font-size:.68rem;color:var(--mid);line-height:1.65;margin-bottom:2.5mm;flex:1}
+.pc-specs{width:100%;border-collapse:collapse;margin-bottom:2.5mm}
+.pc-specs td{font-size:.62rem;padding:1.2mm .8mm;border-bottom:1px solid rgba(0,0,0,.05);vertical-align:top}
+.pc-specs td:first-child{color:var(--muted);font-weight:500;width:42%;white-space:nowrap}
+.pc-specs td:last-child{color:var(--dark);font-weight:600}
+.pc-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(0,0,0,.06);padding-top:2mm;margin-top:auto}
+.price{font-size:1.05rem;font-weight:900;color:var(--navy);direction:ltr;display:inline-block}
+.price-old{font-size:.6rem;color:var(--muted);text-decoration:line-through;display:block}
+.price-contact{font-size:.72rem;color:var(--cognac);font-weight:700}
+.ptag{font-size:.56rem;font-weight:800;padding:2px 7px;border-radius:5px;border:1.5px solid transparent;white-space:nowrap}
+.ptag-hot{background:#FEF2F2;color:#B91C1C;border-color:#FECACA}
+.ptag-new{background:#EFF6FF;color:var(--navy);border-color:#BFDBFE}
+.ptag-prem{background:#FFFBEB;color:#92400E;border-color:#FDE68A}
+.ptag-coming{background:#FEF3C7;color:#B45309;border-color:#FCD34D}
+.ptag-sale{background:#DCFCE7;color:var(--green);border-color:#BBF7D0}
+.ptag-vehicle{background:#ECFDF5;color:#065F46;border-color:#A7F3D0}
+
+/* PACKAGES */
+.pkgs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3.5mm}
+.pkg{border:1px solid rgba(0,0,0,.09);border-radius:10px;overflow:hidden;break-inside:avoid}
+.pkg.featured{border:2px solid var(--navy)}
+.pkg-ph{height:30mm;overflow:hidden;position:relative}
+.pkg-ph img{width:100%;height:100%;object-fit:cover}
+.pkg-ph-ov{position:absolute;inset:0;background:linear-gradient(170deg,transparent 30%,rgba(0,0,0,.6) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:2.5mm 3mm}
+.pkg-name{font-size:.88rem;font-weight:900;color:#fff;text-shadow:0 1px 5px rgba(0,0,0,.45)}
+.pkg-tag{font-size:.58rem;color:rgba(255,255,255,.78)}
+.pkg-body{padding:2.5mm 3mm}
+.pkg-popular{display:block;text-align:center;background:var(--cognac);color:#fff;font-size:.56rem;font-weight:800;letter-spacing:.06em;padding:2px 0}
+.pkg-items{list-style:none;margin-bottom:1.5mm}
+.pkg-items li{font-size:.68rem;color:var(--dark);padding:1mm 0;border-bottom:1px solid var(--sand-l);display:flex;gap:2mm;align-items:flex-start}
+.pkg-items li::before{content:'✓';color:var(--green);font-weight:800;font-size:.62rem;flex-shrink:0;margin-top:1px}
+.pkg-price-wrap{text-align:center;padding-top:1.8mm;border-top:1px solid rgba(0,0,0,.06)}
+.pkg-price-note{font-size:.58rem;color:var(--muted)}
+.pkg-price-main{font-size:1.1rem;font-weight:900;color:var(--navy-d);direction:ltr;display:inline-block}
+
+/* WHY + CONTACT */
+.why-row{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin-bottom:7mm}
+.why-card{text-align:center;padding:3mm 2mm;background:var(--sand-l);border-radius:8px}
+.why-n{font-size:1.35rem;font-weight:900;color:var(--navy-d);line-height:1}
+.why-t{font-size:.65rem;font-weight:700;color:var(--dark);margin:1.2mm 0 .4mm}
+.why-d{font-size:.58rem;color:var(--muted)}
+.contact-block{background:var(--navy-d);color:#fff;border-radius:12px;padding:9mm 10mm;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.contact-logo-pill{display:inline-flex;background:rgba(255,255,255,.94);border-radius:12px;padding:8px 20px;margin-bottom:5mm;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.contact-logo-pill img{height:36px;filter:none}
+.contact-h2{font-size:1.6rem;font-weight:900;margin-bottom:2.5mm}
+.contact-sub{font-size:.82rem;color:rgba(255,255,255,.62);max-width:110mm;line-height:1.7;margin-bottom:7mm}
+.contact-row{display:flex;gap:8mm;justify-content:center;flex-wrap:wrap}
+.contact-item{text-align:center}
+.ci-label{font-size:.56rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--sand);margin-bottom:1mm}
+.ci-val{font-size:.9rem;font-weight:700}
+.contact-note{font-size:.65rem;color:rgba(255,255,255,.35);margin-top:5mm;border-top:1px solid rgba(255,255,255,.1);padding-top:3.5mm;width:100%}
+</style>
+</head>
+<body>
+
+<div class="screen-bar">
+  <span>📄 <strong>Desert Peax — קטלוג B2B 2025</strong> &nbsp;|&nbsp; פתח ב-Chrome · לחץ הדפס · שמור כ-PDF · הפעל "גרפיקת רקע"</span>
+  <button class="print-btn" onclick="window.print()">🖨 הדפס / שמור PDF</button>
+</div>
+
+<!-- עמוד 1: שער -->
+<div class="page cover">
+  <div class="cover-bg"></div>
+  <div class="cover-grad"></div>
+  <div class="cover-body">
+    <div class="cover-logo-pill"><img src="תמונות/LOGO.png" alt="Desert Peax"/></div>
+    <p class="cover-label">קטלוג מוצרים ארגוני</p>
+    <h1 class="cover-h1">ציוד שדה<br/>לחופש אמיתי</h1>
+    <p class="cover-sub">ציוד קמפינג מקצועי שנבחר ונבדק בשטח — לכל הרפתקה, לכל עסק, לכל אירוע. מותג ישראלי, משלוח לכל הארץ.</p>
+    <div class="cover-meta">
+      <span class="cover-tag">B2B · ארגונים</span>
+      <span class="cover-year">קטלוג 2025</span>
+    </div>
+  </div>
+  <div class="cover-strip">
+    <div><img src="תמונות/photo_5771430594440007135_y.jpg" alt=""/></div>
+    <div><img src="תמונות/photo_5771430594440007136_y.jpg" alt=""/></div>
+    <div><img src="תמונות/photo_5771754280355303098_y.jpg" alt=""/></div>
+    <div><img src="תמונות/photo_5771430594440007138_y.jpg" alt=""/></div>
+  </div>
+</div>
+
+<!-- עמוד 2: אודות + B2B -->
+<div class="page">
+  <div class="page-hd"><img class="page-hd-logo" src="תמונות/LOGO.png" alt="Desert Peax"/><span class="page-hd-title">אודות המותג · B2B</span></div>
+  <div class="sec-hd"><span class="sec-lbl">אודות</span><span class="sec-ttl">Desert Peax — ציוד שנבחר בשטח</span></div>
+  <div class="about-grid">
+    <div class="about-photo"><img src="תמונות/photo_5771430594440007138_y.jpg" alt="קמפינג"/></div>
+    <div class="about-copy">
+      <h2>מותג ישראלי.<br/>ציוד שעובד.</h2>
+      <p>כל מוצר שלנו נבחר לאחר ניסיון אישי בשטח, עם דגש על איכות, חוסן ונוחות אמיתית. מכסאות שנושאים עד 180 ק"ג ועד גגונים שהופכים כל רכב לבסיס מחנה.</p>
+      <ul class="about-bullets">
+        <li>מוצרים שנבדקו בשטח הישראלי</li>
+        <li>כושר נשיאה עד 180 ק"ג</li>
+        <li>אחריות מלאה 12 חודשים</li>
+        <li>משלוח מהיר לכל הארץ</li>
+        <li>שירות לקוחות 24/6</li>
+      </ul>
+    </div>
+  </div>
+  <div class="life-strip">
+    <div><img src="תמונות/photo_5771430594440007135_y.jpg" alt=""/></div>
+    <div><img src="תמונות/photo_5771430594440007136_y.jpg" alt=""/></div>
+    <div><img src="תמונות/photo_5771754280355303098_y.jpg" alt=""/></div>
+    <div><img src="תמונות/photo_5771754280355303097_y.jpg" alt=""/></div>
+  </div>
+  <div class="b2b-block">
+    <div>
+      <p style="font-size:.58rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--sand);margin-bottom:3mm">לעסקים ולארגונים</p>
+      <div class="b2b-hl">מתנה<br/>שנשארת<br/>בזיכרון</div>
+    </div>
+    <div>
+      <div class="b2b-items">
+        <div class="b2b-item"><span class="b2b-num">01</span><div><h4>מתנות לחג</h4><p>ראש השנה, חנוכה, פסח — ציוד שמשתמשים בו כל שנה</p></div></div>
+        <div class="b2b-item"><span class="b2b-num">02</span><div><h4>ימי כיף וגיבוש</h4><p>ציידו את הצוות ותצרו חוויה בלתי נשכחת</p></div></div>
+        <div class="b2b-item"><span class="b2b-num">03</span><div><h4>פרסים ותמריצים</h4><p>לעובדים מצטיינים — ציוד שמראה שהם שווים</p></div></div>
+        <div class="b2b-item"><span class="b2b-num">04</span><div><h4>מתנות ללקוחות</h4><p>מתנה מקצועית שנשארת ולא נשכחת</p></div></div>
+      </div>
+      <div class="b2b-foot">מ-10 יחידות · מחיר ארגוני · לוגו החברה על המוצרים · משלוח לנקודה אחת</div>
+    </div>
+  </div>
+</div>
+
+<!-- עמוד 3: מוצרים 1–4 -->
+<div class="page">
+  <div class="page-hd"><img class="page-hd-logo" src="תמונות/LOGO.png" alt="Desert Peax"/><span class="page-hd-title">קטלוג מוצרים — כסאות · ריהוט · שינה</span></div>
+  <div class="sec-hd"><span class="sec-lbl">מוצרים</span><span class="sec-ttl">כסאות, ריהוט שטח ושינה</span></div>
+  <div class="products-grid">
+
+    <div class="pc">
+      <div class="pc-img"><img src="תמונות/photo_5771754280355303075_y.jpg" alt="כסא Classic"/></div>
+      <div class="pc-body">
+        <div class="pc-cat">כסאות קמפינג</div><div class="pc-name">כסא קמפינג Classic</div>
+        <div class="pc-desc">גב מרופד מלא, ידיות מרופדות ומחזיק כוסות. מסגרת אלומיניום מחוזקת עד 180 ק"ג.</div>
+        <table class="pc-specs">
+          <tr><td>כושר נשיאה</td><td>עד 180 ק"ג</td></tr>
+          <tr><td>גובה</td><td>90 ס"מ</td></tr>
+          <tr><td>מסגרת</td><td>אלומיניום מחוזק</td></tr>
+          <tr><td>כולל</td><td>תיק נשיאה יוקרתי</td></tr>
+          <tr><td>אחריות</td><td>12 חודשים</td></tr>
+        </table>
+        <div class="pc-footer"><span class="price">₪189</span><span class="ptag ptag-hot">★ בסט סלר</span></div>
+      </div>
+    </div>
+
+    <div class="pc">
+      <div class="pc-img"><img src="תמונות/photo_5771754280355303077_y.jpg" alt="כסא Breez"/></div>
+      <div class="pc-body">
+        <div class="pc-cat">כסאות קמפינג</div><div class="pc-name">כסא קמפינג Breez</div>
+        <div class="pc-desc">גב Mesh מאוורר לקיץ הישראלי. כיס אחורי גדול, מחזיק כוסות ועיצוב נשימתי ייחודי.</div>
+        <table class="pc-specs">
+          <tr><td>כושר נשיאה</td><td>עד 180 ק"ג</td></tr>
+          <tr><td>גובה</td><td>90 ס"מ</td></tr>
+          <tr><td>גב</td><td>Mesh מאוורר</td></tr>
+          <tr><td>כולל</td><td>תיק נשיאה יוקרתי</td></tr>
+          <tr><td>אחריות</td><td>12 חודשים</td></tr>
+        </table>
+        <div class="pc-footer"><span class="price">₪189</span><span class="ptag ptag-new">✦ חדש</span></div>
+      </div>
+    </div>
+
+    <div class="pc">
+      <div class="pc-img"><img src="תמונות/photo_5771754280355303039_x.jpg" alt="שולחן שטח"/></div>
+      <div class="pc-body">
+        <div class="pc-cat">ריהוט שטח</div><div class="pc-name">שולחן שטח יוקרתי</div>
+        <div class="pc-desc">פלטת במבו טבעית, רגלי אלומיניום מתכווננות ל-3 גבהים. נושא עד 80 ק"ג. 2 גדלים.</div>
+        <table class="pc-specs">
+          <tr><td>גדלים</td><td>100×65 | 50×65 ס"מ</td></tr>
+          <tr><td>גבהים</td><td>43 / 52 / 65 ס"מ</td></tr>
+          <tr><td>נשיאה</td><td>עד 80 ק"ג</td></tr>
+          <tr><td>כולל</td><td>תיק נשיאה שחור</td></tr>
+          <tr><td>אחריות</td><td>12 חודשים</td></tr>
+        </table>
+        <div class="pc-footer"><span class="price">₪299–₪349</span><span class="ptag ptag-prem">◈ פרמיום</span></div>
+      </div>
+    </div>
+
+    <div class="pc">
+      <div class="pc-img"><img src="תמונות/photo_5771754280355303037_y.jpg" alt="מזרן זוגי"/></div>
+      <div class="pc-body">
+        <div class="pc-cat">שינה בשטח</div><div class="pc-name">מזרן שטח זוגי מתנפח</div>
+        <div class="pc-desc">196×120 ס"מ, עובי 9 ס"מ. 2 כריות מובנות, מתנפח ומתרוקן בשניות. TPU עמיד קרעים.</div>
+        <table class="pc-specs">
+          <tr><td>מידות</td><td>196 × 120 ס"מ</td></tr>
+          <tr><td>עובי</td><td>9 ס"מ</td></tr>
+          <tr><td>כריות</td><td>2 מובנות</td></tr>
+          <tr><td>חומר</td><td>TPU עמיד קרעים</td></tr>
+          <tr><td>אחריות</td><td>12 חודשים</td></tr>
+        </table>
+        <div class="pc-footer"><span class="price">₪239</span><span class="ptag ptag-hot">★ בסט סלר</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- עמוד 4: מוצרים 5–8 -->
+<div class="page">
+  <div class="page-hd"><img class="page-hd-logo" src="תמונות/LOGO.png" alt="Desert Peax"/><span class="page-hd-title">קטלוג מוצרים — שינה · אוהלים · ציוד לרכב</span></div>
+  <div class="sec-hd"><span class="sec-lbl">מוצרים</span><span class="sec-ttl">שינה, אוהלים וציוד לרכב</span></div>
+  <div class="products-grid">
+
+    <div class="pc">
+      <div class="pc-img pc-img-ph">
+        <svg width="46" height="34" viewBox="0 0 64 48" fill="none"><path d="M2 46 L16 18 L24 30 L32 10 L40 24 L48 14 L62 46Z" fill="none" stroke="#C8B89A" stroke-width="2.5" stroke-linejoin="round"/><circle cx="52" cy="8" r="4" fill="none" stroke="#C8B89A" stroke-width="1.5"/></svg>
+        <span style="font-size:.52rem;font-weight:800;letter-spacing:.25em;color:rgba(200,184,154,.7);text-transform:uppercase">Desert Peax</span>
+        <span style="font-size:.5rem;color:rgba(255,255,255,.3);letter-spacing:.1em">מזרן יחיד · Premium</span>
+      </div>
+      <div class="pc-body">
+        <div class="pc-cat">שינה בשטח</div><div class="pc-name">מזרן שטח יחיד מתנפח</div>
+        <div class="pc-desc">קומפקטי וקל, מתאים לתרמיל. ניפוח מהיר ונוח. לצבא, קמפינג וטיולי ג'יפ.</div>
+        <table class="pc-specs">
+          <tr><td>קיבולת</td><td>אדם אחד</td></tr>
+          <tr><td>שסתום</td><td>כפול מהיר</td></tr>
+          <tr><td>חומר</td><td>TPU עמיד קרעים</td></tr>
+          <tr><td>אחריות</td><td>12 חודשים</td></tr>
+        </table>
+        <div class="pc-footer"><span class="price">₪189</span><span class="ptag ptag-new">✦ חדש</span></div>
+      </div>
+    </div>
+
+    <div class="pc">
+      <div class="pc-img pc-img-ph">
+        <svg width="32" height="46" viewBox="0 0 48 64" fill="none"><path d="M8 8 C8 4 12 2 24 2 C36 2 40 4 40 8 L40 52 C40 58 33 62 24 62 C15 62 8 58 8 52 Z" fill="none" stroke="#C8B89A" stroke-width="2"/><path d="M16 20 L32 20 M16 28 L32 28 M16 36 L28 36" stroke="rgba(200,184,154,.4)" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span style="font-size:.52rem;font-weight:800;letter-spacing:.25em;color:rgba(200,184,154,.7);text-transform:uppercase">Desert Peax</span>
+        <span style="font-size:.5rem;color:rgba(255,255,255,.3);letter-spacing:.1em">שק שינה · Premium</span>
+      </div>
+      <div class="pc-body">
+        <div class="pc-cat">שינה בשטח</div><div class="pc-name">שק שינה לשטח</div>
+        <div class="pc-desc">חומר חיצוני עמיד מים, בטנה רכה, רוכסן איכותי. 3 עונות. שקית אחסון קומפקטית.</div>
+        <table class="pc-specs">
+          <tr><td>עונות</td><td>3 (אביב–סתיו)</td></tr>
+          <tr><td>חומר</td><td>עמיד מים + שחיקה</td></tr>
+          <tr><td>מחיר מקורי</td><td>₪139</td></tr>
+          <tr><td>אחריות</td><td>12 חודשים</td></tr>
+        </table>
+        <div class="pc-footer"><div><span class="price-old">₪139</span><span class="price" style="font-size:.95rem">₪120</span></div><span class="ptag ptag-sale">↓ מחיר מיוחד</span></div>
+      </div>
+    </div>
+
+    <div class="pc">
+      <div class="pc-img"><img src="תמונות/photo_5771754280355303064_y.jpg" alt="אוהל"/></div>
+      <div class="pc-body">
+        <div class="pc-cat">אוהלים</div><div class="pc-name">אוהל קמפינג 2 חדרים</div>
+        <div class="pc-desc">אוהל משפחתי מרווח עם 2 חדרים נפרדים. הרכבה מהירה, עמיד ברוח ובגשם.</div>
+        <table class="pc-specs">
+          <tr><td>חדרים</td><td>2 נפרדים</td></tr>
+          <tr><td>עמידות</td><td>רוח וגשם</td></tr>
+          <tr><td>הרכבה</td><td>מהירה, ללא כלים</td></tr>
+          <tr><td>כולל</td><td>יתדות ומוטות</td></tr>
+          <tr><td>אחריות</td><td>12 חודשים</td></tr>
+        </table>
+        <div class="pc-footer"><span class="price">₪699</span><span class="ptag ptag-new">✦ משפחתי</span></div>
+      </div>
+    </div>
+
+    <div class="pc">
+      <div class="pc-img"><img src="תמונות/photo_5771754280355303070_y.jpg" alt="גגון 90"/></div>
+      <div class="pc-body">
+        <div class="pc-cat">ציוד לרכב</div><div class="pc-name">גגון צד לרכב 90°</div>
+        <div class="pc-desc">הגנה מהשמש והגשם. Vinyl עמיד UV. הופך כל רכב לבסיס מחנה תוך 2 דקות.</div>
+        <table class="pc-specs">
+          <tr><td>גדלים</td><td>2×3 מ' | 3×3 מ'</td></tr>
+          <tr><td>חומר</td><td>Vinyl עמיד UV</td></tr>
+          <tr><td>פתיחה</td><td>ידנית מהירה</td></tr>
+          <tr><td>אחריות</td><td>12 חודשים</td></tr>
+        </table>
+        <div class="pc-footer"><span class="price">₪849</span><span class="ptag ptag-vehicle">🚙 לרכב</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- עמוד 5: מוצרים 9–11 + חבילות -->
+<div class="page">
+  <div class="page-hd"><img class="page-hd-logo" src="תמונות/LOGO.png" alt="Desert Peax"/><span class="page-hd-title">מוצרים פרמיום · חבילות B2B</span></div>
+  <div class="sec-hd" style="margin-bottom:3.5mm"><span class="sec-lbl">מוצרים</span><span class="sec-ttl">ציוד לרכב פרמיום ואביזרים</span></div>
+  <div class="products-grid" style="margin-bottom:6mm">
+
+    <div class="pc">
+      <div class="pc-img"><img src="תמונות/photo_5771754280355303071_x.jpg" alt="גגון קירות"/></div>
+      <div class="pc-body">
+        <div class="pc-cat">ציוד לרכב — פרמיום</div><div class="pc-name">גגון צד לרכב עם קירות</div>
+        <div class="pc-desc">חדר מוגן ופרטי בצמוד לרכב. 4 קירות עם פתחי אוורור, הרכבה ללא כלים.</div>
+        <table class="pc-specs">
+          <tr><td>גדל</td><td>2×3 מ'</td></tr>
+          <tr><td>קירות</td><td>4 + פתחי אוורור</td></tr>
+          <tr><td>מחיר מקורי</td><td>₪2,599</td></tr>
+          <tr><td>אחריות</td><td>12 חודשים</td></tr>
+        </table>
+        <div class="pc-footer"><div><span class="price-old">₪2,599</span><span class="price" style="font-size:.95rem">₪2,299</span></div><span class="ptag ptag-prem">◈ פרמיום</span></div>
+      </div>
+    </div>
+
+    <div class="pc">
+      <div class="pc-img"><img src="תמונות/photo_5771754280355303047_x.jpg" alt="תיק קירור"/></div>
+      <div class="pc-body">
+        <div class="pc-cat">אביזרים לשטח</div><div class="pc-name">תיקי קירור Desert Peax</div>
+        <div class="pc-desc">2 תאים נפרדים, רצועות קוניאק, לוגו רקום. שחור ואפור מלאנז'.</div>
+        <table class="pc-specs">
+          <tr><td>תאים</td><td>עליון + קדמי</td></tr>
+          <tr><td>צבעים</td><td>שחור | אפור מלאנז'</td></tr>
+          <tr><td>חומר</td><td>פוליאסטר עמיד מים</td></tr>
+          <tr><td>לוגו</td><td>Desert Peax רקום</td></tr>
+        </table>
+        <div class="pc-footer"><span class="price-contact">צרו קשר לפרטים</span><span class="ptag ptag-coming">◌ בקרוב</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sec-hd"><span class="sec-lbl">הצעות לארגונים</span><span class="sec-ttl">חבילות B2B מוכנות</span></div>
+  <div class="pkgs-grid">
+
+    <div class="pkg">
+      <div class="pkg-ph"><img src="תמונות/photo_5771430594440007135_y.jpg" alt="חבילת חג"/>
+        <div class="pkg-ph-ov"><div class="pkg-name">חבילת חג</div><div class="pkg-tag">לכל עובד ועובדת</div></div>
+      </div>
+      <div class="pkg-body">
+        <ul class="pkg-items"><li>כסא קמפינג Classic / Breez</li><li>שק שינה לשטח</li><li>אריזת מתנה ממותגת</li><li>משלוח לנקודה אחת</li></ul>
+        <div class="pkg-price-wrap"><div class="pkg-price-note">מחיר ליחידה (מ-10 יח')</div><div class="pkg-price-main">~₪309</div></div>
+      </div>
+    </div>
+
+    <div class="pkg featured">
+      <div class="pkg-popular">🔥 הכי פופולרי</div>
+      <div class="pkg-ph"><img src="תמונות/photo_5771430594440007136_y.jpg" alt="חבילת גיבוש"/>
+        <div class="pkg-ph-ov"><div class="pkg-name">חבילת גיבוש</div><div class="pkg-tag">ליום כיף לחברה</div></div>
+      </div>
+      <div class="pkg-body">
+        <ul class="pkg-items"><li>כסא קמפינג Breez (Mesh)</li><li>שולחן שטח יוקרתי</li><li>מזרן שטח זוגי</li><li>לוגו החברה על המוצרים</li></ul>
+        <div class="pkg-price-wrap"><div class="pkg-price-note">מחיר ליחידה (מ-10 יח')</div><div class="pkg-price-main">~₪717</div></div>
+      </div>
+    </div>
+
+    <div class="pkg">
+      <div class="pkg-ph"><img src="תמונות/photo_5771754280355303098_y.jpg" alt="חבילת פרמיום"/>
+        <div class="pkg-ph-ov"><div class="pkg-name">חבילת פרמיום</div><div class="pkg-tag">ללקוחות ומנהלים בכירים</div></div>
+      </div>
+      <div class="pkg-body">
+        <ul class="pkg-items"><li>גגון צד לרכב 90°</li><li>2 כסאות Classic</li><li>שולחן שטח יוקרתי</li><li>שירות White Glove</li></ul>
+        <div class="pkg-price-wrap"><div class="pkg-price-note">מחיר ליחידה (מ-5 יח')</div><div class="pkg-price-main">~₪1,337</div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- עמוד 6: למה + צור קשר -->
+<div class="page">
+  <div class="page-hd"><img class="page-hd-logo" src="תמונות/LOGO.png" alt="Desert Peax"/><span class="page-hd-title">למה Desert Peax · צור קשר</span></div>
+  <div class="sec-hd" style="margin-bottom:4mm"><span class="sec-lbl">המספרים שלנו</span><span class="sec-ttl">למה Desert Peax</span></div>
+  <div class="why-row">
+    <div class="why-card"><div class="why-n">180<small style="font-size:.75rem">ק"ג</small></div><div class="why-t">כושר נשיאה</div><div class="why-d">כסאות שעומדים בכל עומס</div></div>
+    <div class="why-card"><div class="why-n">12<small style="font-size:.75rem">חד'</small></div><div class="why-t">אחריות מלאה</div><div class="why-d">כיסוי מלא על כל המוצרים</div></div>
+    <div class="why-card"><div class="why-n">24/6</div><div class="why-t">שירות לקוחות</div><div class="why-d">תמיד שם בשבילכם</div></div>
+    <div class="why-card"><div class="why-n">🇮🇱</div><div class="why-t">מותג ישראלי</div><div class="why-d">ציוד שנבדק בשטח הישראלי</div></div>
+  </div>
+  <div class="contact-block">
+    <div class="contact-logo-pill"><img src="תמונות/LOGO.png" alt="Desert Peax"/></div>
+    <h2 class="contact-h2">מוכנים לציוד את הצוות?</h2>
+    <p class="contact-sub">השאירו פרטים ונחזור אליכם תוך 24 שעות עם הצעת מחיר מותאמת. זמינים לפגישה, שיחה, או הצעת מחיר.</p>
+    <div class="contact-row">
+      <div class="contact-item"><div class="ci-label">טלפון</div><div class="ci-val">055-962-0768</div></div>
+      <div class="contact-item"><div class="ci-label">מייל</div><div class="ci-val">contact@desertpeax.co.il</div></div>
+      <div class="contact-item"><div class="ci-label">אתר</div><div class="ci-val">desertpeax.co.il</div></div>
+      <div class="contact-item"><div class="ci-label">WhatsApp</div><div class="ci-val">055-962-0768</div></div>
+    </div>
+    <div class="contact-note">Desert Peax — ציוד שדה לחופש אמיתי · Gear Up Your Freedom · © 2025 כל הזכויות שמורות</div>
+  </div>
+</div>
+
+</body>
+</html>

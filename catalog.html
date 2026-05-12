@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Desert Peax — קטלוג מוצרים B2B 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+/* ─── TOKENS ─────────────────────────────────────────────── */
+:root{
+  --navy:#1B3F82; --navy-d:#0F2455; --navy-l:#2A5BAA;
+  --sand:#C8B89A; --sand-l:#F0E8DC; --sand-d:#A89070;
+  --gold:#C9A84C; --cognac:#8B5E3C;
+  --dark:#1A1A1A; --mid:#4B5563; --muted:#9CA3AF;
+  --bg:#F7F4EF; --card:#FFFFFF;
+  --green:#15803D; --green-l:#DCFCE7;
+  --orange:#B45309; --orange-l:#FEF3C7;
+  --red:#B91C1C; --red-l:#FEE2E2;
+  --blue-l:#EFF6FF;
+  --r:16px; --r-sm:10px; --r-lg:24px;
+  --sh:0 2px 8px rgba(0,0,0,.07),0 8px 32px rgba(0,0,0,.06);
+  --sh-h:0 8px 24px rgba(0,0,0,.12),0 24px 64px rgba(0,0,0,.1);
+  --tr:.25s cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Heebo',sans-serif;background:var(--bg);color:var(--dark);direction:rtl;text-align:right;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;outline:none}
+
+/* ─── UTILITIES ───────────────────────────────────────────── */
+.container{max-width:1300px;margin:0 auto;padding:0 2rem}
+.txt-navy{color:var(--navy)} .txt-sand{color:var(--sand)} .txt-muted{color:var(--muted)}
+.fw-9{font-weight:900} .fw-8{font-weight:800} .fw-7{font-weight:700} .fw-5{font-weight:500}
+.hidden{display:none!important}
+
+/* ─── NAVBAR ─────────────────────────────────────────────── */
+.nav{
+  position:fixed;top:0;right:0;left:0;z-index:900;
+  height:68px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 2.5rem;
+  background:rgba(200,184,154,.97);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.25);
+  transition:box-shadow var(--tr);
+}
+.nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.15)}
+.nav-logo img{height:40px;width:auto;mix-blend-mode:multiply}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{font-size:.9rem;font-weight:600;color:var(--navy-d);transition:color var(--tr)}
+.nav-links a:hover{color:var(--cognac)}
+.nav-contact{
+  background:var(--navy);color:#fff;font-size:.85rem;font-weight:700;
+  padding:.45rem 1.3rem;border-radius:50px;
+  transition:background var(--tr),transform var(--tr);
+}
+.nav-contact:hover{background:var(--navy-d);transform:translateY(-1px)}
+
+/* ─── HERO ───────────────────────────────────────────────── */
+.hero{
+  position:relative;height:100vh;min-height:640px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('תמונות/photo_5771754280355303096_y.jpg') center 30%/cover no-repeat;
+  transform:scale(1.04);
+  transition:transform 8s ease;
+  filter:brightness(.48);
+}
+.hero-bg.zoomed{transform:scale(1)}
+.hero-grad{position:absolute;inset:0;background:linear-gradient(170deg,rgba(15,36,85,.5) 0%,rgba(0,0,0,.4) 100%)}
+.hero-body{
+  position:relative;z-index:2;text-align:center;color:#fff;
+  padding:0 1.5rem;
+  animation:heroIn .9s ease forwards;
+}
+.hero-logo-pill{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.94);
+  border-radius:18px;padding:12px 26px;
+  box-shadow:0 8px 32px rgba(0,0,0,.28),0 2px 8px rgba(0,0,0,.18);
+  margin:0 auto 1.8rem;
+  backdrop-filter:blur(4px);
+}
+.hero-logo{height:76px;width:auto;display:block;filter:none}
+.hero-en{font-size:.8rem;letter-spacing:.35em;text-transform:uppercase;color:var(--sand);margin-bottom:.6rem;opacity:.9}
+.hero-h1{font-size:clamp(3rem,7.5vw,5.8rem);font-weight:900;line-height:1.02;text-shadow:0 3px 30px rgba(0,0,0,.5);margin-bottom:.9rem}
+.hero-sub{font-size:clamp(1rem,2.2vw,1.3rem);font-weight:300;opacity:.85;max-width:560px;margin:0 auto 2.5rem;line-height:1.65}
+.hero-cta{
+  display:inline-block;background:var(--sand);color:var(--navy-d);
+  font-size:1.05rem;font-weight:800;padding:.9rem 3rem;border-radius:50px;
+  box-shadow:0 6px 24px rgba(0,0,0,.3);
+  transition:all var(--tr);
+}
+.hero-cta:hover{background:#fff;transform:translateY(-3px);box-shadow:0 12px 36px rgba(0,0,0,.3)}
+.hero-scroll{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  z-index:2;color:rgba(255,255,255,.5);font-size:.72rem;
+  letter-spacing:.18em;display:flex;flex-direction:column;align-items:center;gap:.4rem;
+  animation:scrollBounce 2.2s ease infinite;
+}
+.hero-scroll::after{content:'';width:1px;height:36px;background:rgba(255,255,255,.3)}
+
+/* ─── CATALOG CONTROLS ─────────────────────────────────────── */
+.controls{
+  position:sticky;top:68px;z-index:800;
+  background:rgba(247,244,239,.98);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,.07);
+  padding:.9rem 0;
+  box-shadow:0 2px 12px rgba(0,0,0,.05);
+}
+.controls-inner{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+
+.search-wrap{
+  display:flex;align-items:center;gap:.6rem;
+  background:#fff;border:1.5px solid rgba(0,0,0,.1);border-radius:50px;
+  padding:.5rem 1rem;flex:0 0 260px;
+  transition:border-color var(--tr),box-shadow var(--tr);
+}
+.search-wrap:focus-within{border-color:var(--navy);box-shadow:0 0 0 3px rgba(27,63,130,.1)}
+.search-wrap svg{color:var(--muted);flex-shrink:0}
+.search-input{border:none;background:transparent;font-family:inherit;font-size:.9rem;color:var(--dark);width:100%;outline:none}
+.search-input::placeholder{color:var(--muted)}
+
+.cats{display:flex;gap:.5rem;flex-wrap:wrap;flex:1}
+.cat-btn{
+  display:inline-flex;align-items:center;gap:.35rem;
+  padding:.45rem 1.1rem;border-radius:50px;
+  font-size:.85rem;font-weight:600;
+  background:#fff;color:var(--mid);
+  border:1.5px solid rgba(0,0,0,.1);
+  transition:all var(--tr);cursor:pointer;
+}
+.cat-btn:hover{border-color:var(--navy);color:var(--navy)}
+.cat-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.cat-count{
+  background:rgba(255,255,255,.25);font-size:.72rem;font-weight:700;
+  padding:.05rem .4rem;border-radius:20px;
+}
+.cat-btn.active .cat-count{background:rgba(255,255,255,.22)}
+.cat-btn:not(.active) .cat-count{background:rgba(0,0,0,.07);color:var(--mid)}
+
+.sort-select{
+  padding:.45rem 1rem;border-radius:50px;
+  border:1.5px solid rgba(0,0,0,.1);background:#fff;
+  font-family:inherit;font-size:.85rem;font-weight:600;color:var(--mid);
+  cursor:pointer;outline:none;
+  transition:border-color var(--tr);
+}
+.sort-select:focus{border-color:var(--navy)}
+
+/* ─── SECTION SHELL ──────────────────────────────────────── */
+.section{padding:5rem 0}
+.sec-label{font-size:.75rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--cognac);margin-bottom:.4rem}
+.sec-title{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:900;color:var(--navy-d);line-height:1.15;margin-bottom:.8rem}
+.sec-sub{font-size:1rem;color:var(--mid);line-height:1.7;max-width:580px}
+
+/* ─── PRODUCTS SECTION ───────────────────────────────────── */
+.products-section{padding:3rem 0 6rem}
+.results-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:2rem;flex-wrap:wrap;gap:.5rem;
+}
+.results-count{font-size:.9rem;color:var(--muted);font-weight:500}
+.results-count strong{color:var(--dark)}
+
+/* ─── PRODUCT GRID ───────────────────────────────────────── */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2rem;
+}
+
+/* ─── PRODUCT CARD ───────────────────────────────────────── */
+.pc{
+  background:var(--card);border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:var(--sh);
+  transition:transform var(--tr),box-shadow var(--tr);
+  display:flex;flex-direction:column;
+  border:1px solid rgba(0,0,0,.05);
+}
+.pc:hover{transform:translateY(-6px);box-shadow:var(--sh-h)}
+
+/* Image area */
+.pc-img-wrap{
+  position:relative;overflow:hidden;
+  background:var(--sand-l);
+  height:260px;flex-shrink:0;
+}
+.pc-img-main{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .55s ease;
+}
+.pc:hover .pc-img-main{transform:scale(1.05)}
+
+/* Gallery strip */
+.pc-gallery{
+  position:absolute;bottom:.6rem;right:.6rem;
+  display:flex;gap:.35rem;
+}
+.pc-thumb{
+  width:44px;height:44px;border-radius:8px;overflow:hidden;
+  border:2px solid rgba(255,255,255,.85);
+  cursor:pointer;transition:all var(--tr);
+  flex-shrink:0;
+}
+.pc-thumb:hover,.pc-thumb.active{border-color:var(--navy)}
+.pc-thumb img{width:100%;height:100%;object-fit:cover}
+
+/* Product tag row (replaces image overlay badges) */
+.pc-tag-row{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.1rem}
+.ptag{
+  display:inline-flex;align-items:center;gap:.25rem;
+  padding:.18rem .55rem;border-radius:6px;
+  font-size:.7rem;font-weight:800;letter-spacing:.03em;
+  white-space:nowrap;border:1.5px solid transparent;
+}
+.ptag-hot{background:#FEF2F2;color:#B91C1C;border-color:#FECACA}
+.ptag-new{background:var(--blue-l);color:var(--navy);border-color:#BFDBFE}
+.ptag-prem{background:#FFFBEB;color:#92400E;border-color:#FDE68A}
+.ptag-coming{background:var(--orange-l);color:var(--orange);border-color:#FCD34D}
+.ptag-sale{background:var(--green-l);color:var(--green);border-color:#BBF7D0}
+.ptag-vehicle{background:#ECFDF5;color:#065F46;border-color:#A7F3D0}
+
+/* Stock indicator */
+.pc-stock{
+  position:absolute;top:.7rem;left:.7rem;
+  display:flex;align-items:center;gap:.3rem;
+  padding:.22rem .65rem;border-radius:20px;
+  font-size:.7rem;font-weight:700;
+  backdrop-filter:blur(8px);
+}
+.stock-in{background:var(--green-l);color:var(--green)}
+.stock-out{background:var(--red-l);color:var(--red)}
+.stock-soon{background:var(--orange-l);color:var(--orange)}
+.stock-dot{width:6px;height:6px;border-radius:50%;background:currentColor}
+
+/* Card body */
+.pc-body{padding:1.35rem 1.4rem;flex:1;display:flex;flex-direction:column;gap:.7rem}
+.pc-cat{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--cognac)}
+.pc-name{font-size:1.15rem;font-weight:800;color:var(--navy-d);line-height:1.25}
+.pc-desc{font-size:.86rem;color:var(--mid);line-height:1.65;flex:1}
+
+/* Feature chips */
+.pc-chips{display:flex;flex-wrap:wrap;gap:.35rem}
+.chip{
+  display:inline-flex;align-items:center;gap:.25rem;
+  background:var(--sand-l);color:var(--navy-d);
+  font-size:.75rem;font-weight:600;
+  padding:.22rem .65rem;border-radius:20px;
+}
+
+/* Specs table (collapsed/expanded) */
+.pc-specs-toggle{
+  background:none;font-size:.82rem;font-weight:600;
+  color:var(--navy);display:flex;align-items:center;gap:.35rem;
+  padding:0;
+  transition:color var(--tr);
+}
+.pc-specs-toggle:hover{color:var(--navy-d)}
+.toggle-icon{transition:transform var(--tr);font-size:.75rem}
+.specs-open .toggle-icon{transform:rotate(180deg)}
+
+.pc-specs-body{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s ease,opacity .3s ease;
+  opacity:0;
+}
+.specs-open .pc-specs-body{max-height:500px;opacity:1}
+
+.specs-table{width:100%;border-collapse:collapse;margin-top:.6rem}
+.specs-table tr{border-bottom:1px solid rgba(0,0,0,.05)}
+.specs-table tr:last-child{border-bottom:none}
+.specs-table td{padding:.4rem .3rem;font-size:.82rem;vertical-align:top}
+.specs-table td:first-child{color:var(--muted);font-weight:500;width:40%;white-space:nowrap}
+.specs-table td:last-child{color:var(--dark);font-weight:600}
+
+/* Price + CTA */
+.pc-footer{
+  border-top:1px solid rgba(0,0,0,.06);
+  padding-top:.9rem;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:.5rem;
+}
+.pc-price{display:flex;flex-direction:column}
+.price-main{font-size:1.6rem;font-weight:900;color:var(--navy);line-height:1}
+.price-old{font-size:.8rem;color:var(--muted);text-decoration:line-through}
+.price-deal{font-size:.77rem;color:var(--green);font-weight:700}
+.price-contact{font-size:.9rem;color:var(--cognac);font-weight:700}
+.pc-btn{
+  background:var(--navy);color:#fff;
+  font-size:.82rem;font-weight:700;
+  padding:.55rem 1.3rem;border-radius:50px;
+  transition:all var(--tr);white-space:nowrap;
+}
+.pc-btn:hover{background:var(--navy-d);transform:translateY(-1px)}
+.pc-btn.secondary{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+.pc-btn.secondary:hover{background:var(--navy);color:#fff}
+
+/* ─── EMPTY STATE ─────────────────────────────────────────── */
+.empty-state{
+  grid-column:1/-1;text-align:center;padding:5rem 2rem;
+  color:var(--muted);
+}
+.empty-state-icon{font-size:3.5rem;margin-bottom:1rem;opacity:.4}
+.empty-state h3{font-size:1.2rem;font-weight:700;color:var(--dark);margin-bottom:.4rem}
+.empty-state p{font-size:.9rem}
+
+/* ─── ABOUT STRIP ────────────────────────────────────────── */
+.about-strip{background:var(--sand-l);padding:4.5rem 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-img{border-radius:var(--r-lg);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15)}
+.about-img img{width:100%;height:400px;object-fit:cover}
+/* ─── LIFESTYLE PHOTOS ───────────────────────────────────── */
+.life-strip{display:grid;grid-template-columns:repeat(4,1fr);height:240px;overflow:hidden}
+.life-strip div{overflow:hidden}
+.life-strip div img{width:100%;height:100%;object-fit:cover;transition:transform .5s;filter:saturate(.9)}
+.life-strip div:hover img{transform:scale(1.06);filter:saturate(1.1)}
+
+/* ─── B2B SECTION (editorial split) ─────────────────────── */
+.b2b{background:var(--bg);padding:0;overflow:hidden}
+.b2b-inner{display:grid;grid-template-columns:1fr 1fr;min-height:680px}
+.b2b-photo{position:relative;overflow:hidden}
+.b2b-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 8s ease}
+.b2b-photo:hover img{transform:scale(1.04)}
+.b2b-photo-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(160deg,rgba(15,36,85,.55) 0%,rgba(0,0,0,.3) 100%);
+  display:flex;align-items:flex-end;padding:2.5rem;
+}
+.b2b-photo-logo{
+  display:inline-flex;align-items:center;
+  background:rgba(255,255,255,.93);
+  border-radius:12px;padding:8px 18px;
+  box-shadow:0 4px 20px rgba(0,0,0,.35);
+}
+.b2b-photo-logo img{height:42px;width:auto;filter:none;display:block}
+.b2b-content{
+  background:var(--navy-d);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  padding:4rem 3.5rem;
+}
+.b2b-content-inner{max-width:460px}
+.b2b-content-inner .sec-label{color:var(--sand);margin-bottom:.6rem}
+.b2b-headline{
+  font-size:clamp(3rem,5vw,4.5rem);font-weight:900;line-height:.95;
+  color:#fff;margin-bottom:1.4rem;
+}
+.b2b-lead{font-size:.97rem;color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:2rem}
+.b2b-list{display:flex;flex-direction:column;gap:1.2rem;margin-bottom:2.2rem}
+.b2b-item{display:flex;align-items:flex-start;gap:1rem}
+.b2b-num{
+  font-size:.75rem;font-weight:900;color:var(--sand);letter-spacing:.1em;
+  border:1.5px solid rgba(200,184,154,.35);border-radius:6px;
+  padding:.2rem .5rem;flex-shrink:0;margin-top:.15rem;
+}
+.b2b-item-text h4{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.15rem}
+.b2b-item-text p{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.6}
+.b2b-note{
+  font-size:.8rem;color:rgba(255,255,255,.4);
+  border-top:1px solid rgba(255,255,255,.1);
+  padding-top:1.2rem;margin-bottom:1.5rem;letter-spacing:.03em;
+}
+.b2b-cta{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--sand);color:var(--navy-d);
+  font-size:.95rem;font-weight:800;padding:.75rem 2rem;border-radius:50px;
+  transition:all var(--tr);
+}
+.b2b-cta:hover{background:#fff;transform:translateY(-2px)}
+
+/* ─── PACKAGES ───────────────────────────────────────────── */
+.packages{background:var(--bg);padding:5.5rem 0}
+.pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.pkg{
+  background:#fff;border-radius:var(--r-lg);overflow:hidden;
+  box-shadow:var(--sh);transition:transform var(--tr);
+  position:relative;border:1px solid rgba(0,0,0,.06);
+}
+.pkg:hover{transform:translateY(-5px)}
+.pkg.star{border:2px solid var(--navy)}
+.pkg-star-label{
+  position:absolute;top:0;left:50%;transform:translateX(-50%);
+  background:var(--cognac);color:#fff;
+  font-size:.7rem;font-weight:800;padding:.2rem 1.1rem;
+  border-radius:0 0 10px 10px;letter-spacing:.08em;white-space:nowrap;
+}
+.pkg-head{
+  position:relative;height:190px;overflow:hidden;
+}
+.pkg-head img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.pkg:hover .pkg-head img{transform:scale(1.06)}
+.pkg-head-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(170deg,rgba(0,0,0,.08) 0%,rgba(0,0,0,.6) 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:1.2rem 1.4rem;
+}
+.pkg-head-name{font-size:1.2rem;font-weight:900;color:#fff;margin-bottom:.2rem;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.pkg-head-tag{font-size:.78rem;color:rgba(255,255,255,.8);font-weight:500}
+.pkg-body{padding:1.4rem 1.5rem}
+.pkg-items{list-style:none;margin-bottom:1.2rem}
+.pkg-items li{
+  display:flex;align-items:flex-start;gap:.5rem;
+  padding:.42rem 0;border-bottom:1px solid var(--sand-l);
+  font-size:.88rem;
+}
+.pkg-items li:last-child{border-bottom:none}
+.pkg-items li::before{content:'✓';color:var(--green);font-weight:800;flex-shrink:0;margin-top:.05rem}
+.pkg-foot{padding:0 1.5rem 1.5rem;text-align:center}
+.pkg-price-note{font-size:.73rem;color:var(--muted);margin-bottom:.15rem}
+.pkg-price{font-size:1.9rem;font-weight:900;color:var(--navy-d);direction:ltr;display:inline-block;margin-bottom:.15rem}
+.pkg-disc{font-size:.75rem;color:var(--muted);margin-bottom:.9rem}
+.pkg-cta{
+  display:block;text-align:center;
+  background:var(--navy);color:#fff;
+  font-size:.92rem;font-weight:700;
+  padding:.7rem;border-radius:50px;
+  transition:background var(--tr);
+}
+.pkg-cta:hover{background:var(--navy-d)}
+.pkg.star .pkg-cta{background:var(--navy)}
+.pkg.cognac-theme .pkg-cta{background:var(--cognac)}
+.pkg.cognac-theme .pkg-cta:hover{background:#6e4a2d}
+
+/* ─── WHY NUMS ───────────────────────────────────────────── */
+.why{background:var(--sand-l);padding:4rem 0}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2.5rem}
+.why-card{text-align:center;padding:1.8rem 1rem}
+.why-num{font-size:2.6rem;font-weight:900;color:var(--sand-d);line-height:1;margin-bottom:.3rem}
+.why-title{font-size:.93rem;font-weight:700;color:var(--navy-d);margin-bottom:.25rem}
+.why-desc{font-size:.8rem;color:var(--muted);line-height:1.6}
+
+/* ─── CTA BANNER ─────────────────────────────────────────── */
+.cta{
+  background:linear-gradient(135deg,var(--navy-d),var(--navy));
+  color:#fff;text-align:center;padding:5rem 2rem;
+}
+.cta h2{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:900;margin-bottom:.7rem}
+.cta p{font-size:1.05rem;opacity:.78;margin-bottom:2.5rem;max-width:520px;margin-left:auto;margin-right:auto}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-primary{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--sand);color:var(--navy-d);
+  font-size:1rem;font-weight:800;padding:.85rem 2.3rem;border-radius:50px;
+  transition:all var(--tr);
+}
+.cta-primary:hover{background:#fff;transform:translateY(-2px)}
+.cta-wa{background:#25D366;color:#fff}
+.cta-wa:hover{background:#1EAE56!important;color:#fff!important}
+.cta-secondary{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:transparent;color:#fff;border:2px solid rgba(255,255,255,.4);
+  font-size:1rem;font-weight:700;padding:.85rem 2.3rem;border-radius:50px;
+  transition:all var(--tr);
+}
+.cta-secondary:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
+.footer{background:#111;color:rgba(255,255,255,.7);padding:3.5rem 0 2rem}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+.footer-logo-pill{
+  display:inline-flex;align-items:center;
+  background:rgba(255,255,255,.92);
+  border-radius:12px;padding:8px 18px;
+  box-shadow:0 4px 16px rgba(0,0,0,.3);
+  margin-bottom:1rem;
+}
+.footer-brand img{height:38px;width:auto;filter:none;display:block}
+.footer-brand p{font-size:.83rem;line-height:1.75;color:rgba(255,255,255,.45)}
+.footer-col h4{font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);margin-bottom:1rem}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:.5rem;font-size:.85rem;color:rgba(255,255,255,.5)}
+.footer-col ul li a{transition:color var(--tr)}
+.footer-col ul li a:hover{color:var(--sand)}
+.footer-contact li{display:flex;align-items:center;gap:.5rem}
+.footer-bot{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:1.4rem;display:flex;align-items:center;
+  justify-content:space-between;flex-wrap:wrap;gap:.5rem;
+  font-size:.75rem;color:rgba(255,255,255,.25);
+}
+
+/* ─── ANIMATIONS ──────────────────────────────────────────── */
+.fade{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.fade.in{opacity:1;transform:none}
+@keyframes heroIn{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+@keyframes scrollBounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* ─── EDIT MODE ───────────────────────────────────────────── */
+.em-fab{
+  position:fixed;bottom:2rem;left:2rem;z-index:9999;
+  width:52px;height:52px;border-radius:50%;
+  background:var(--navy);color:#fff;
+  border:none;cursor:pointer;font-size:1.25rem;
+  box-shadow:0 4px 20px rgba(0,0,0,.25);
+  transition:all var(--tr);display:flex;align-items:center;justify-content:center;
+}
+.em-fab:hover{background:var(--navy-d);transform:scale(1.08)}
+.em-fab.active{background:#15803D;width:auto;padding:0 1.2rem;border-radius:50px;font-size:.9rem;font-weight:700;gap:.45rem;white-space:nowrap}
+.em-fab.active::before{content:'✓';font-size:1rem}
+
+.em-bar{
+  display:none;position:fixed;top:68px;left:0;right:0;z-index:850;
+  background:#15803D;color:#fff;font-size:.82rem;font-weight:600;
+  padding:.5rem 1.5rem;text-align:center;letter-spacing:.02em;
+}
+body.em .em-bar{display:block}
+
+body.em [data-e]{
+  outline:1.5px dashed rgba(21,128,61,.5);
+  border-radius:4px;cursor:text;
+  transition:outline-color .2s;
+}
+body.em [data-e]:hover,[data-e]:focus{outline-color:#15803D;background:rgba(21,128,61,.06)}
+body.em [data-e]:focus{outline-style:solid}
+
+.em-img-btn{
+  display:none;position:absolute;bottom:.45rem;left:.45rem;z-index:10;
+  background:rgba(21,128,61,.9);color:#fff;
+  font-size:.7rem;font-weight:700;padding:.3rem .7rem;border-radius:20px;
+  cursor:pointer;border:none;font-family:inherit;
+  transition:all var(--tr);
+}
+body.em .em-img-btn{display:flex;align-items:center;gap:.3rem}
+.em-img-btn:hover{background:#15803D}
+
+.em-toast{
+  position:fixed;bottom:5.5rem;left:2rem;z-index:9999;
+  background:#1A1A1A;color:#fff;
+  font-size:.85rem;font-weight:600;padding:.6rem 1.3rem;border-radius:50px;
+  box-shadow:0 4px 20px rgba(0,0,0,.25);
+  transform:translateY(10px);opacity:0;
+  transition:all .3s ease;pointer-events:none;
+}
+.em-toast.show{opacity:1;transform:none}
+
+/* ─── PRINT ───────────────────────────────────────────────── */
+@media print{
+  .nav,.hero-scroll,.controls,.cta,.footer,.pc-btn,.pkg-cta,.em-fab,.em-bar{display:none}
+  .hero{height:35vh;min-height:unset}
+  .products-section,.about-strip,.b2b,.packages,.why{padding:1.5rem 0}
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:1rem}
+  .b2b-inner{grid-template-columns:1fr}
+  .b2b-photo{display:none}
+  .pkgs,.why-grid{grid-template-columns:repeat(2,1fr)}
+  .pc-specs-body{max-height:unset!important;opacity:1!important}
+  .fade{opacity:1;transform:none}
+  body{font-size:12px}
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────────── */
+@media(max-width:1100px){.product-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){
+  .nav-links{display:none}
+  .about-grid,.footer-grid{grid-template-columns:1fr}
+  .b2b-inner{grid-template-columns:1fr}
+  .b2b-content{padding:3rem 2rem}
+  .b2b-photo{min-height:320px}
+  .pkgs{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .life-strip{grid-template-columns:repeat(2,1fr);height:200px}
+  .life-strip div:nth-child(3),.life-strip div:nth-child(4){display:none}
+  .controls-inner{gap:.6rem}
+  .search-wrap{flex:0 0 200px}
+  .em-fab{bottom:1.2rem;left:1.2rem}
+  .em-toast{bottom:4.5rem;left:1.2rem}
+}
+@media(max-width:660px){
+  .product-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .cats{display:flex;overflow-x:auto;flex-wrap:nowrap;gap:.4rem;padding-bottom:.2rem;-webkit-overflow-scrolling:touch}
+  .cat-btn{white-space:nowrap;flex-shrink:0}
+  .controls-inner{flex-wrap:nowrap;overflow-x:auto}
+  .search-wrap{flex:0 0 180px}
+  .sort-select{flex-shrink:0}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+<nav class="nav" id="nav">
+  <div class="nav-logo"><a href="#hero"><img src="תמונות/LOGO.png" alt="Desert Peax"/></a></div>
+  <ul class="nav-links">
+    <li><a href="#about">אודות</a></li>
+    <li><a href="#catalog">מוצרים</a></li>
+    <li><a href="#b2b">לעסקים</a></li>
+    <li><a href="#packages">חבילות</a></li>
+  </ul>
+  <a href="#contact" class="nav-contact">צור קשר B2B</a>
+</nav>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-grad"></div>
+  <div class="hero-body">
+    <div class="hero-logo-pill"><img class="hero-logo" src="תמונות/LOGO.png" alt="Desert Peax"/></div>
+    <p class="hero-en" data-e="hero-en">Gear Up Your Freedom</p>
+    <h1 class="hero-h1" data-e="hero-h1">ציוד שדה<br/>לחופש אמיתי</h1>
+    <p class="hero-sub" data-e="hero-sub">ציוד קמפינג מקצועי שנבחר ונבדק בשטח — לכל הרפתקה, לכל עסק, לכל אירוע</p>
+    <a href="#catalog" class="hero-cta">לקטלוג המלא ↓</a>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- ═══════════════════════ ABOUT STRIP ══════════════════ -->
+<section class="about-strip fade" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <p class="sec-label">אודות המותג</p>
+        <h2 class="sec-title" data-e="about-title">Desert Peax<br/>ציוד שנבחר בשטח</h2>
+        <p class="sec-sub" data-e="about-text">כל מוצר שלנו נבחר לאחר ניסיון אישי בשטח, עם דגש על איכות, חוסן ונוחות אמיתית. מכסאות שנושאים עד 180 ק"ג ועד גגונים שהופכים כל רכב לבסיס מחנה.</p>
+      </div>
+      <div class="about-img">
+        <img src="תמונות/photo_5771430594440007138_y.jpg" alt="משפחה עם Desert Peax סביב מדורה"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- lifestyle strip -->
+<div class="life-strip fade">
+  <div><img src="תמונות/photo_5771430594440007135_y.jpg" alt="חברים ביער"/></div>
+  <div><img src="תמונות/photo_5771430594440007136_y.jpg" alt="ג'יפ במדבר"/></div>
+  <div><img src="תמונות/photo_5771754280355303098_y.jpg" alt="הרים עם שקיעה"/></div>
+  <div><img src="תמונות/photo_5771754280355303097_y.jpg" alt="יער ירוק"/></div>
+</div>
+
+<!-- ═══════════════════════ CATALOG CONTROLS ════════════ -->
+<div class="controls" id="catalog">
+  <div class="container">
+    <div class="controls-inner">
+      <!-- Search -->
+      <div class="search-wrap">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input class="search-input" type="text" placeholder="חיפוש מוצר..." id="searchInput" autocomplete="off"/>
+      </div>
+      <!-- Categories -->
+      <div class="cats" id="catBar">
+        <button class="cat-btn active" data-cat="all">הכל <span class="cat-count">11</span></button>
+        <button class="cat-btn" data-cat="כסאות">כסאות <span class="cat-count">2</span></button>
+        <button class="cat-btn" data-cat="ריהוט שטח">ריהוט שטח <span class="cat-count">1</span></button>
+        <button class="cat-btn" data-cat="שינה בשטח">שינה בשטח <span class="cat-count">3</span></button>
+        <button class="cat-btn" data-cat="אוהלים">אוהלים <span class="cat-count">1</span></button>
+        <button class="cat-btn" data-cat="ציוד לרכב">ציוד לרכב <span class="cat-count">2</span></button>
+        <button class="cat-btn" data-cat="אביזרים">אביזרים <span class="cat-count">2</span></button>
+      </div>
+      <!-- Sort -->
+      <select class="sort-select" id="sortSelect">
+        <option value="default">מיון: ברירת מחדל</option>
+        <option value="price-asc">מחיר: נמוך לגבוה</option>
+        <option value="price-desc">מחיר: גבוה לנמוך</option>
+        <option value="name">לפי שם</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ PRODUCTS ════════════════════ -->
+<section class="products-section">
+  <div class="container">
+    <div class="results-bar">
+      <span class="results-count">מציג <strong id="countDisplay">11</strong> מוצרים</span>
+      <span style="font-size:.8rem;color:var(--muted)">לחצו על מוצר לפרטים מלאים ←</span>
+    </div>
+
+    <div class="product-grid" id="productGrid">
+
+<!-- ══════════════════════════════════════════════════════
+     PRODUCT 1 — כסא Classic
+════════════════════════════════════════════════════════ -->
+<div class="pc fade" data-cat="כסאות" data-price="189" data-name="כסא קמפינג Classic">
+  <div class="pc-img-wrap">
+    <img class="pc-img-main" id="img-p1" src="תמונות/photo_5771754280355303075_y.jpg" alt="כסא קמפינג Classic Desert Peax"/>
+    <div class="pc-gallery">
+      <div class="pc-thumb active" onclick="swapImg('img-p1',this,'תמונות/photo_5771754280355303075_y.jpg')"><img src="תמונות/photo_5771754280355303075_y.jpg" alt=""/></div>
+      <div class="pc-thumb" onclick="swapImg('img-p1',this,'תמונות/photo_5771754280355303085_y.jpg')"><img src="תמונות/photo_5771754280355303085_y.jpg" alt=""/></div>
+      <div class="pc-thumb" onclick="swapImg('img-p1',this,'תמונות/photo_5771754280355303083_y.jpg')"><img src="תמונות/photo_5771754280355303083_y.jpg" alt=""/></div>
+      <div class="pc-thumb" onclick="swapImg('img-p1',this,'תמונות/photo_5771754280355303078_y.jpg')"><img src="תמונות/photo_5771754280355303078_y.jpg" alt=""/></div>
+    </div>
+    <button class="em-img-btn" onclick="replaceImage('img-p1')">🖼 החלף תמונה</button>
+    <div class="pc-stock stock-in"><span class="stock-dot"></span> במלאי</div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-tag-row"><span class="ptag ptag-hot">★ בסט סלר</span></div>
+    <div class="pc-cat">כסאות קמפינג</div>
+    <div class="pc-name" data-e="p1-name">כסא קמפינג Classic</div>
+    <div class="pc-desc" data-e="p1-desc">גב מרופד מלא לתמיכה מקסימלית, ידיות מרופדות ומחזיק כוסות. מסגרת אלומיניום מחוזקת שנושאת עד 180 ק"ג. הכסא שהפך לסמל של קמפינג נוח ואמין.</div>
+    <div class="pc-chips">
+      <span class="chip">🏔️ גב מרופד מלא</span>
+      <span class="chip">☕ מחזיק כוסות</span>
+      <span class="chip">💼 תיק נשיאה</span>
+      <span class="chip">⚡ אלומיניום</span>
+    </div>
+    <button class="pc-specs-toggle" onclick="toggleSpecs(this)">
+      <span>פרטים טכניים מלאים</span>
+      <span class="toggle-icon">▼</span>
+    </button>
+    <div class="pc-specs-body">
+      <table class="specs-table">
+        <tr><td>גובה כסא</td><td>90 ס"מ</td></tr>
+        <tr><td>רוחב מושב</td><td>58 ס"מ</td></tr>
+        <tr><td>כושר נשיאה</td><td>עד 180 ק"ג</td></tr>
+        <tr><td>משקל עצמי</td><td>~4 ק"ג</td></tr>
+        <tr><td>מסגרת</td><td>אלומיניום מחוזק</td></tr>
+        <tr><td>בד</td><td>פוליאסטר איכותי</td></tr>
+        <tr><td>גב</td><td>מרופד מלא</td></tr>
+        <tr><td>ידיות</td><td>מרופדות</td></tr>
+        <tr><td>מחזיק כוסות</td><td>כן, צדי</td></tr>
+        <tr><td>כיס אחסון</td><td>צדי</td></tr>
+        <tr><td>כולל</td><td>תיק נשיאה יוקרתי</td></tr>
+        <tr><td>אחריות</td><td>12 חודשים</td></tr>
+      </table>
+    </div>
+    <div class="pc-footer">
+      <div class="pc-price">
+        <span class="price-main" data-e="p1-price">₪189</span>
+        <span class="price-deal">2 כסאות — ₪350</span>
+      </div>
+      <a href="#contact" class="pc-btn">לפרטים</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PRODUCT 2 — כסא Breez
+════════════════════════════════════════════════════════ -->
+<div class="pc fade" data-cat="כסאות" data-price="189" data-name="כסא קמפינג Breez">
+  <div class="pc-img-wrap">
+    <img class="pc-img-main" id="img-p2" src="תמונות/photo_5771754280355303077_y.jpg" alt="כסא קמפינג Breez Desert Peax"/>
+    <div class="pc-gallery">
+      <div class="pc-thumb active" onclick="swapImg('img-p2',this,'תמונות/photo_5771754280355303077_y.jpg')"><img src="תמונות/photo_5771754280355303077_y.jpg" alt=""/></div>
+      <div class="pc-thumb" onclick="swapImg('img-p2',this,'תמונות/photo_5771754280355303081_y.jpg')"><img src="תמונות/photo_5771754280355303081_y.jpg" alt=""/></div>
+      <div class="pc-thumb" onclick="swapImg('img-p2',this,'תמונות/photo_5771754280355303086_y.jpg')"><img src="תמונות/photo_5771754280355303086_y.jpg" alt=""/></div>
+      <div class="pc-thumb" onclick="swapImg('img-p2',this,'תמונות/photo_5771754280355303087_y.jpg')"><img src="תמונות/photo_5771754280355303087_y.jpg" alt=""/></div>
+    </div>
+    <button class="em-img-btn" onclick="replaceImage('img-p2')">🖼 החלף תמונה</button>
+    <div class="pc-stock stock-in"><span class="stock-dot"></span> במלאי</div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-tag-row"><span class="ptag ptag-new">✦ חדש</span></div>
+    <div class="pc-cat">כסאות קמפינג</div>
+    <div class="pc-name" data-e="p2-name">כסא קמפינג Breez</div>
+    <div class="pc-desc" data-e="p2-desc">הפתרון לקיץ הישראלי הלוהט. גב Mesh מאוורר שמונע הצטברות חום ומאפשר נשימה מקסימלית. כיס אחורי גדול ועיצוב נשימתי ייחודי.</div>
+    <div class="pc-chips">
+      <span class="chip">🌬️ גב Mesh מאוורר</span>
+      <span class="chip">🎒 כיס אחורי</span>
+      <span class="chip">☕ מחזיק כוסות</span>
+      <span class="chip">💼 תיק נשיאה</span>
+    </div>
+    <button class="pc-specs-toggle" onclick="toggleSpecs(this)">
+      <span>פרטים טכניים מלאים</span>
+      <span class="toggle-icon">▼</span>
+    </button>
+    <div class="pc-specs-body">
+      <table class="specs-table">
+        <tr><td>גובה כסא</td><td>90 ס"מ</td></tr>
+        <tr><td>רוחב מושב</td><td>58 ס"מ</td></tr>
+        <tr><td>כושר נשיאה</td><td>עד 180 ק"ג</td></tr>
+        <tr><td>משקל עצמי</td><td>~4 ק"ג</td></tr>
+        <tr><td>מסגרת</td><td>אלומיניום מחוזק</td></tr>
+        <tr><td>בד</td><td>פוליאסטר איכותי</td></tr>
+        <tr><td>גב</td><td>Mesh מאוורר</td></tr>
+        <tr><td>ידיות</td><td>מרופדות</td></tr>
+        <tr><td>מחזיק כוסות</td><td>כן, צדי</td></tr>
+        <tr><td>כיס אחורי</td><td>גדול עם ריפוד</td></tr>
+        <tr><td>כולל</td><td>תיק נשיאה יוקרתי</td></tr>
+        <tr><td>אחריות</td><td>12 חודשים</td></tr>
+      </table>
+    </div>
+    <div class="pc-footer">
+      <div class="pc-price">
+        <span class="price-main" data-e="p2-price">₪189</span>
+        <span class="price-deal">2 כסאות — ₪330</span>
+      </div>
+      <a href="#contact" class="pc-btn">לפרטים</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PRODUCT 3 — שולחן שטח
+════════════════════════════════════════════════════════ -->
+<div class="pc fade" data-cat="ריהוט שטח" data-price="299" data-name="שולחן שטח יוקרתי">
+  <div class="pc-img-wrap">
+    <img class="pc-img-main" id="img-p3" src="תמונות/photo_5771754280355303039_x.jpg" alt="שולחן שטח יוקרתי Desert Peax"/>
+    <div class="pc-gallery">
+      <div class="pc-thumb active" onclick="swapImg('img-p3',this,'תמונות/photo_5771754280355303039_x.jpg')"><img src="תמונות/photo_5771754280355303039_x.jpg" alt=""/></div>
+      <div class="pc-thumb" onclick="swapImg('img-p3',this,'תמונות/photo_5771754280355303074_x.jpg')"><img src="תמונות/photo_5771754280355303074_x.jpg" alt=""/></div>
+      <div class="pc-thumb" onclick="swapImg('img-p3',this,'תמונות/photo_5771754280355303040_y.jpg')"><img src="תמונות/photo_5771754280355303040_y.jpg" alt=""/></div>
+    </div>
+    <button class="em-img-btn" onclick="replaceImage('img-p3')">🖼 החלף תמונה</button>
+    <div class="pc-stock stock-in"><span class="stock-dot"></span> במלאי</div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-tag-row"><span class="ptag ptag-prem">◈ פרמיום</span></div>
+    <div class="pc-cat">ריהוט שטח</div>
+    <div class="pc-name" data-e="p3-name">שולחן שטח יוקרתי</div>
+    <div class="pc-desc" data-e="p3-desc">פלטת במבו טבעית על רגלי אלומיניום מתכווננות ל-3 גבהים. מתקפל לתיק נשיאה קומפקטי, נושא עד 80 ק"ג. זמין בשני גדלים.</div>
+    <div class="pc-chips">
+      <span class="chip">🪵 במבו טבעי</span>
+      <span class="chip">📏 3 גבהים</span>
+      <span class="chip">🏋️ 80 ק"ג נשיאה</span>
+      <span class="chip">💼 תיק נשיאה</span>
+    </div>
+    <button class="pc-specs-toggle" onclick="toggleSpecs(this)">
+      <span>פרטים טכניים מלאים</span>
+      <span class="toggle-icon">▼</span>
+    </button>
+    <div class="pc-specs-body">
+      <table class="specs-table">
+        <tr><td>גדלים זמינים</td><td>100×65 ס"מ | 50×65 ס"מ</td></tr>
+        <tr><td>גבהים אפשריים</td><td>43 / 52 / 65 ס"מ</td></tr>
+        <tr><td>כושר נשיאה</td><td>עד 80 ק"ג</td></tr>
+        <tr><td>חומר פלטה</td><td>במבו טבעי</td></tr>
+        <tr><td>מסגרת</td><td>אלומיניום</td></tr>
+        <tr><td>מידות מקופל</td><td>20×17×100 ס"מ</td></tr>
+        <tr><td>כולל</td><td>תיק נשיאה שחור</td></tr>
+        <tr><td>הרכבה</td><td>7 שלבים פשוטים</td></tr>
+        <tr><td>אחריות</td><td>12 חודשים</td></tr>
+      </table>
+    </div>
+    <div class="pc-footer">
+      <div class="pc-price">
+        <span class="price-main" data-e="p3-price">₪299–₪349</span>
+        <span class="price-deal">שני גדלים זמינים</span>
+      </div>
+      <a href="#contact" class="pc-btn">לפרטים</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PRODUCT 4 — מזרן זוגי
+════════════════════════════════════════════════════════ -->
+<div class="pc fade" data-cat="שינה בשטח" data-price="239" data-name="מזרן שטח זוגי מתנפח">
+  <div class="pc-img-wrap">
+    <img class="pc-img-main" id="img-p4" src="תמונות/photo_5771754280355303037_y.jpg" alt="מזרן שטח זוגי Desert Peax"/>
+    <button class="em-img-btn" onclick="replaceImage('img-p4')">🖼 החלף תמונה</button>
+    <div class="pc-stock stock-in"><span class="stock-dot"></span> במלאי</div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-tag-row"><span class="ptag ptag-hot">★ בסט סלר</span></div>
+    <div class="pc-cat">שינה בשטח</div>
+    <div class="pc-name" data-e="p4-name">מזרן שטח זוגי מתנפח</div>
+    <div class="pc-desc" data-e="p4-desc">נפח ענקי 196×120 ס"מ, עובי 9 ס"מ שמבטיח שינה אמיתית. 2 כריות מובנות, מתנפח ומתרוקן בשניות. מתאים לכל סוגי השטח.</div>
+    <div class="pc-chips">
+      <span class="chip">👫 לשניים</span>
+      <span class="chip">📐 196×120 ס"מ</span>
+      <span class="chip">📏 עובי 9 ס"מ</span>
+      <span class="chip">🏕️ עמיד שטח</span>
+    </div>
+    <button class="pc-specs-toggle" onclick="toggleSpecs(this)">
+      <span>פרטים טכניים מלאים</span>
+      <span class="toggle-icon">▼</span>
+    </button>
+    <div class="pc-specs-body">
+      <table class="specs-table">
+        <tr><td>מידות</td><td>196 × 120 ס"מ</td></tr>
+        <tr><td>עובי מנופח</td><td>9 ס"מ</td></tr>
+        <tr><td>קיבולת</td><td>2 אנשים</td></tr>
+        <tr><td>משקל עצמי</td><td>~2 ק"ג</td></tr>
+        <tr><td>כריות</td><td>2 כריות מובנות</td></tr>
+        <tr><td>שסתום</td><td>כפול — מהיר</td></tr>
+        <tr><td>חומר</td><td>TPU עמיד קרעים</td></tr>
+        <tr><td>שטחים</td><td>חול, אדמה, קרקע קשה</td></tr>
+        <tr><td>אחריות</td><td>12 חודשים</td></tr>
+      </table>
+    </div>
+    <div class="pc-footer">
+      <div class="pc-price"><span class="price-main" data-e="p4-price">₪239</span></div>
+      <a href="#contact" class="pc-btn">לפרטים</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PRODUCT 5 — מזרן יחיד
+════════════════════════════════════════════════════════ -->
+<div class="pc fade" data-cat="שינה בשטח" data-price="189" data-name="מזרן שטח יחיד מתנפח">
+  <div class="pc-img-wrap" style="background:linear-gradient(145deg,#0F2455 0%,#1B3F82 60%,#2A5BAA 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.6rem">
+    <svg width="64" height="48" viewBox="0 0 64 48" fill="none" style="opacity:.55"><path d="M2 46 L16 18 L24 30 L32 10 L40 24 L48 14 L62 46Z" fill="none" stroke="#C8B89A" stroke-width="2" stroke-linejoin="round"/><circle cx="52" cy="8" r="5" fill="none" stroke="#C8B89A" stroke-width="1.5"/></svg>
+    <div style="font-size:.65rem;font-weight:800;letter-spacing:.3em;color:rgba(200,184,154,.75);text-transform:uppercase">Desert Peax</div>
+    <div style="font-size:.72rem;color:rgba(255,255,255,.35);letter-spacing:.12em">Premium · מזרן יחיד</div>
+    <div class="pc-stock stock-in"><span class="stock-dot"></span> במלאי</div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-tag-row"><span class="ptag ptag-new">✦ חדש</span></div>
+    <div class="pc-cat">שינה בשטח</div>
+    <div class="pc-name" data-e="p5-name">מזרן שטח יחיד מתנפח</div>
+    <div class="pc-desc" data-e="p5-desc">קומפקטי, קל ונוח — מזרן אידיאלי לטיולים ומסעות. מתנפח ומתרוקן מהר, נכנס לכל תרמיל. מתאים לצבא, קמפינג וטיולי ג'יפ.</div>
+    <div class="pc-chips">
+      <span class="chip">👤 ליחיד</span>
+      <span class="chip">🎒 קומפקטי</span>
+      <span class="chip">⚡ ניפוח מהיר</span>
+      <span class="chip">🏕️ לכל שטח</span>
+    </div>
+    <button class="pc-specs-toggle" onclick="toggleSpecs(this)">
+      <span>פרטים טכניים מלאים</span>
+      <span class="toggle-icon">▼</span>
+    </button>
+    <div class="pc-specs-body">
+      <table class="specs-table">
+        <tr><td>קיבולת</td><td>אדם אחד</td></tr>
+        <tr><td>פאקינג</td><td>קומפקטי לתרמיל</td></tr>
+        <tr><td>שסתום</td><td>מהיר ונוח</td></tr>
+        <tr><td>חומר</td><td>TPU עמיד קרעים</td></tr>
+        <tr><td>שטחים</td><td>חול, אדמה, קרקע קשה</td></tr>
+        <tr><td>שימושים</td><td>קמפינג, צבא, פסטיבלים, טיולי ג'יפ</td></tr>
+        <tr><td>אחריות</td><td>12 חודשים</td></tr>
+      </table>
+    </div>
+    <div class="pc-footer">
+      <div class="pc-price"><span class="price-main" data-e="p5-price">₪189</span></div>
+      <a href="#contact" class="pc-btn">לפרטים</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PRODUCT 6 — שק שינה
+════════════════════════════════════════════════════════ -->
+<div class="pc fade" data-cat="שינה בשטח" data-price="120" data-name="שק שינה לשטח">
+  <div class="pc-img-wrap" style="background:linear-gradient(145deg,#1A1A2E 0%,#0F2455 50%,#1B3F82 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.6rem">
+    <svg width="48" height="64" viewBox="0 0 48 64" fill="none" style="opacity:.5"><path d="M8 8 C8 4 12 2 24 2 C36 2 40 4 40 8 L40 52 C40 58 33 62 24 62 C15 62 8 58 8 52 Z" fill="none" stroke="#C8B89A" stroke-width="2"/><path d="M16 20 L32 20 M16 28 L32 28 M16 36 L28 36" stroke="rgba(200,184,154,.45)" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <div style="font-size:.65rem;font-weight:800;letter-spacing:.3em;color:rgba(200,184,154,.75);text-transform:uppercase">Desert Peax</div>
+    <div style="font-size:.72rem;color:rgba(255,255,255,.35);letter-spacing:.12em">Premium · שק שינה</div>
+    <div class="pc-stock stock-in"><span class="stock-dot"></span> במלאי</div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-tag-row"><span class="ptag ptag-sale">↓ מחיר מיוחד</span></div>
+    <div class="pc-cat">שינה בשטח</div>
+    <div class="pc-name" data-e="p6-name">שק שינה לשטח</div>
+    <div class="pc-desc" data-e="p6-desc">חומר חיצוני עמיד מים, בטנה רכה ונעימה, רוכסן איכותי. עוטף את הגוף ושומר על חום טבעי. מתאים לצבא, טיולים, פסטיבלים ולינת שטח.</div>
+    <div class="pc-chips">
+      <span class="chip">💧 עמיד מים</span>
+      <span class="chip">🌡️ בידוד חום</span>
+      <span class="chip">🎒 קומפקטי</span>
+      <span class="chip">🪖 מתאים לצבא</span>
+    </div>
+    <button class="pc-specs-toggle" onclick="toggleSpecs(this)">
+      <span>פרטים טכניים מלאים</span>
+      <span class="toggle-icon">▼</span>
+    </button>
+    <div class="pc-specs-body">
+      <table class="specs-table">
+        <tr><td>חומר חיצוני</td><td>עמיד מים ושחיקה</td></tr>
+        <tr><td>בטנה</td><td>רכה ונעימה למגע</td></tr>
+        <tr><td>רוכסן</td><td>איכותי — קל לפתיחה</td></tr>
+        <tr><td>עונות</td><td>3 עונות (אביב–סתיו)</td></tr>
+        <tr><td>פאקינג</td><td>שקית אחסון קומפקטית</td></tr>
+        <tr><td>שימושים</td><td>קמפינג, צבא, פסטיבלים, לינת שטח</td></tr>
+        <tr><td>מחיר מקורי</td><td>₪139</td></tr>
+        <tr><td>אחריות</td><td>12 חודשים</td></tr>
+      </table>
+    </div>
+    <div class="pc-footer">
+      <div class="pc-price">
+        <span class="price-old">₪139</span>
+        <span class="price-main" data-e="p6-price">₪120</span>
+      </div>
+      <a href="#contact" class="pc-btn">לפרטים</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PRODUCT 7 — אוהל 2 חדרים
+════════════════════════════════════════════════════════ -->
+<div class="pc fade" data-cat="אוהלים" data-price="699" data-name="אוהל קמפינג 2 חדרים">
+  <div class="pc-img-wrap">
+    <img class="pc-img-main" id="img-p7" src="תמונות/photo_5771754280355303064_y.jpg" alt="אוהל קמפינג עם מדורה"/>
+    <div class="pc-gallery">
+      <div class="pc-thumb active" onclick="swapImg('img-p7',this,'תמונות/photo_5771754280355303064_y.jpg')"><img src="תמונות/photo_5771754280355303064_y.jpg" alt=""/></div>
+      <div class="pc-thumb" onclick="swapImg('img-p7',this,'תמונות/photo_5771430594440007138_y.jpg')"><img src="תמונות/photo_5771430594440007138_y.jpg" alt=""/></div>
+    </div>
+    <button class="em-img-btn" onclick="replaceImage('img-p7')">🖼 החלף תמונה</button>
+    <div class="pc-stock stock-in"><span class="stock-dot"></span> במלאי</div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-tag-row"><span class="ptag ptag-new">✦ משפחתי</span></div>
+    <div class="pc-cat">אוהלים</div>
+    <div class="pc-name" data-e="p7-name">אוהל קמפינג 2 חדרים</div>
+    <div class="pc-desc" data-e="p7-desc">אוהל משפחתי מרווח עם שני חדרים נפרדים — פרטיות מקסימלית בלב הטבע. הרכבה מהירה וקלה, עמיד ברוח ובגשם.</div>
+    <div class="pc-chips">
+      <span class="chip">🏕️ 2 חדרים</span>
+      <span class="chip">👨‍👩‍👧 משפחתי</span>
+      <span class="chip">💨 עמיד רוח</span>
+      <span class="chip">🌧️ עמיד גשם</span>
+    </div>
+    <button class="pc-specs-toggle" onclick="toggleSpecs(this)">
+      <span>פרטים טכניים מלאים</span>
+      <span class="toggle-icon">▼</span>
+    </button>
+    <div class="pc-specs-body">
+      <table class="specs-table">
+        <tr><td>מספר חדרים</td><td>2 חדרים נפרדים</td></tr>
+        <tr><td>עמידות</td><td>רוח וגשם</td></tr>
+        <tr><td>הרכבה</td><td>מהירה, ללא כלים</td></tr>
+        <tr><td>כולל</td><td>יתדות ומוטות</td></tr>
+        <tr><td>משלוח</td><td>לכל הארץ</td></tr>
+        <tr><td>אחריות</td><td>12 חודשים</td></tr>
+      </table>
+    </div>
+    <div class="pc-footer">
+      <div class="pc-price"><span class="price-main" data-e="p7-price">₪699</span></div>
+      <a href="#contact" class="pc-btn">לפרטים</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PRODUCT 8 — גגון 90°
+════════════════════════════════════════════════════════ -->
+<div class="pc fade" data-cat="ציוד לרכב" data-price="849" data-name="גגון צד לרכב 90°">
+  <div class="pc-img-wrap">
+    <img class="pc-img-main" id="img-p8" src="תמונות/photo_5771754280355303070_y.jpg" alt="גגון צד לרכב 90°"/>
+    <button class="em-img-btn" onclick="replaceImage('img-p8')">🖼 החלף תמונה</button>
+    <div class="pc-stock stock-in"><span class="stock-dot"></span> במלאי</div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-tag-row"><span class="ptag ptag-vehicle">🚙 לרכב</span></div>
+    <div class="pc-cat">ציוד לרכב</div>
+    <div class="pc-name" data-e="p8-name">גגון צד לרכב 90°</div>
+    <div class="pc-desc" data-e="p8-desc">הגנה מהשמש והגשם בלחיצת כפתור. שכבת Vinyl לבידוד מושלם. הופך כל רכב לבסיס מחנה ב-2 דקות. זמין ב-2 גדלים.</div>
+    <div class="pc-chips">
+      <span class="chip">☀️ הגנה מהשמש</span>
+      <span class="chip">🌧️ עמיד גשם</span>
+      <span class="chip">⚡ פתיחה מהירה</span>
+      <span class="chip">📐 2×3 / 3×3 מ'</span>
+    </div>
+    <button class="pc-specs-toggle" onclick="toggleSpecs(this)">
+      <span>פרטים טכניים מלאים</span>
+      <span class="toggle-icon">▼</span>
+    </button>
+    <div class="pc-specs-body">
+      <table class="specs-table">
+        <tr><td>גדלים</td><td>2×3 מ' | 3×3 מ'</td></tr>
+        <tr><td>חומר</td><td>Vinyl עמיד UV</td></tr>
+        <tr><td>הגנה</td><td>שמש + גשם</td></tr>
+        <tr><td>פתיחה</td><td>ידנית מהירה</td></tr>
+        <tr><td>התקנה</td><td>על גגון הרכב הקיים</td></tr>
+        <tr><td>תאימות</td><td>רוב סוגי הרכבים</td></tr>
+        <tr><td>אחריות</td><td>12 חודשים</td></tr>
+      </table>
+    </div>
+    <div class="pc-footer">
+      <div class="pc-price"><span class="price-main" data-e="p8-price">₪849</span></div>
+      <a href="#contact" class="pc-btn">לפרטים</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PRODUCT 9 — גגון עם קירות
+════════════════════════════════════════════════════════ -->
+<div class="pc fade" data-cat="ציוד לרכב" data-price="2299" data-name="גגון צד לרכב עם קירות">
+  <div class="pc-img-wrap">
+    <img class="pc-img-main" id="img-p9" src="תמונות/photo_5771754280355303071_x.jpg" alt="גגון צד לרכב עם קירות"/>
+    <div class="pc-gallery">
+      <div class="pc-thumb active" onclick="swapImg('img-p9',this,'תמונות/photo_5771754280355303071_x.jpg')"><img src="תמונות/photo_5771754280355303071_x.jpg" alt=""/></div>
+      <div class="pc-thumb" onclick="swapImg('img-p9',this,'תמונות/photo_5771754280355303073_x.jpg')"><img src="תמונות/photo_5771754280355303073_x.jpg" alt=""/></div>
+    </div>
+    <button class="em-img-btn" onclick="replaceImage('img-p9')">🖼 החלף תמונה</button>
+    <div class="pc-stock stock-in"><span class="stock-dot"></span> במלאי</div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-tag-row">
+      <span class="ptag ptag-prem">◈ פרמיום</span>
+      <span class="ptag ptag-vehicle">🚙 לרכב</span>
+    </div>
+    <div class="pc-cat">ציוד לרכב — פרמיום</div>
+    <div class="pc-name" data-e="p9-name">גגון צד לרכב עם קירות</div>
+    <div class="pc-desc" data-e="p9-desc">חדר מוגן ופרטי בצמוד לרכב — הרכבה ללא כלים, קירות עם פתחי אוורור, מסגרת יציבה עם רגלי תמיכה. מחליף כל מקום לינה.</div>
+    <div class="pc-chips">
+      <span class="chip">🏠 חדר מוגן</span>
+      <span class="chip">🔒 קירות פרטיות</span>
+      <span class="chip">🌬️ פתחי אוורור</span>
+      <span class="chip">🔧 ללא כלים</span>
+    </div>
+    <button class="pc-specs-toggle" onclick="toggleSpecs(this)">
+      <span>פרטים טכניים מלאים</span>
+      <span class="toggle-icon">▼</span>
+    </button>
+    <div class="pc-specs-body">
+      <table class="specs-table">
+        <tr><td>גדלים</td><td>2×3 מ'</td></tr>
+        <tr><td>קירות</td><td>עם פתחי אוורור</td></tr>
+        <tr><td>הרכבה</td><td>ללא כלים</td></tr>
+        <tr><td>מסגרת</td><td>אלומיניום + רגלי תמיכה</td></tr>
+        <tr><td>עמידות</td><td>רוח, שמש, גשם</td></tr>
+        <tr><td>פרטיות</td><td>מלאה — 4 קירות</td></tr>
+        <tr><td>תאימות</td><td>גגון סטנדרטי</td></tr>
+        <tr><td>מחיר מקורי</td><td>₪2,599</td></tr>
+        <tr><td>אחריות</td><td>12 חודשים</td></tr>
+      </table>
+    </div>
+    <div class="pc-footer">
+      <div class="pc-price">
+        <span class="price-old">₪2,599</span>
+        <span class="price-main" data-e="p9-price">₪2,299</span>
+        <span class="price-deal">חיסכון ₪300</span>
+      </div>
+      <a href="#contact" class="pc-btn">לפרטים</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PRODUCT 10 — תיק קירור שחור
+════════════════════════════════════════════════════════ -->
+<div class="pc fade" data-cat="אביזרים" data-price="0" data-name="תיק קירור שחור">
+  <div class="pc-img-wrap">
+    <img class="pc-img-main" id="img-p10" src="תמונות/photo_5771754280355303047_x.jpg" alt="תיק קירור שחור Desert Peax"/>
+    <button class="em-img-btn" onclick="replaceImage('img-p10')">🖼 החלף תמונה</button>
+    <div class="pc-stock stock-soon"><span class="stock-dot"></span> בקרוב בחנות</div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-tag-row"><span class="ptag ptag-coming">◌ בקרוב</span></div>
+    <div class="pc-cat">אביזרים לשטח</div>
+    <div class="pc-name" data-e="p10-name">תיק קירור שחור</div>
+    <div class="pc-desc" data-e="p10-desc">תיק קירור מקצועי עם 2 תאים נפרדים — תא עליון וגדול לאוכל ותא קדמי לאחסון. רצועות קוניאק עמידות ולוגו Desert Peax.</div>
+    <div class="pc-chips">
+      <span class="chip">❄️ 2 תאים קירור</span>
+      <span class="chip">🎒 רצועת כתף</span>
+      <span class="chip">💧 עמיד מים</span>
+      <span class="chip">🖤 שחור / קוניאק</span>
+    </div>
+    <button class="pc-specs-toggle" onclick="toggleSpecs(this)">
+      <span>פרטים טכניים מלאים</span>
+      <span class="toggle-icon">▼</span>
+    </button>
+    <div class="pc-specs-body">
+      <table class="specs-table">
+        <tr><td>תאים</td><td>2 (עליון + קדמי)</td></tr>
+        <tr><td>צבע</td><td>שחור + רצועות קוניאק</td></tr>
+        <tr><td>ידית</td><td>כפולה + רצועת כתף</td></tr>
+        <tr><td>סגירה</td><td>2 רוכסנים איכותיים</td></tr>
+        <tr><td>כיס צדי</td><td>רשת לבקבוקים</td></tr>
+        <tr><td>חומר</td><td>פוליאסטר עמיד מים</td></tr>
+        <tr><td>לוגו</td><td>Desert Peax רקום</td></tr>
+      </table>
+    </div>
+    <div class="pc-footer">
+      <div class="pc-price"><span class="price-contact">צרו קשר לפרטים</span></div>
+      <a href="#contact" class="pc-btn secondary">פנייה</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PRODUCT 11 — תיק קירור אפור
+════════════════════════════════════════════════════════ -->
+<div class="pc fade" data-cat="אביזרים" data-price="0" data-name="תיק קירור אפור">
+  <div class="pc-img-wrap">
+    <img class="pc-img-main" id="img-p11" src="תמונות/photo_5771754280355303048_x.jpg" alt="תיק קירור אפור Desert Peax"/>
+    <button class="em-img-btn" onclick="replaceImage('img-p11')">🖼 החלף תמונה</button>
+    <div class="pc-stock stock-soon"><span class="stock-dot"></span> בקרוב בחנות</div>
+  </div>
+  <div class="pc-body">
+    <div class="pc-tag-row"><span class="ptag ptag-coming">◌ בקרוב</span></div>
+    <div class="pc-cat">אביזרים לשטח</div>
+    <div class="pc-name" data-e="p11-name">תיק קירור אפור מלאנז'</div>
+    <div class="pc-desc" data-e="p11-desc">גרסת האפור המלאנז' של תיק הקירור הפופולרי — 2 תאים נפרדים, רצועות קוניאק עמידות ועיצוב נקי. אידיאלי לפיקניק ולשטח.</div>
+    <div class="pc-chips">
+      <span class="chip">❄️ 2 תאים קירור</span>
+      <span class="chip">🎒 רצועת כתף</span>
+      <span class="chip">💧 עמיד מים</span>
+      <span class="chip">🩶 אפור מלאנז'</span>
+    </div>
+    <button class="pc-specs-toggle" onclick="toggleSpecs(this)">
+      <span>פרטים טכניים מלאים</span>
+      <span class="toggle-icon">▼</span>
+    </button>
+    <div class="pc-specs-body">
+      <table class="specs-table">
+        <tr><td>תאים</td><td>2 (עליון + קדמי)</td></tr>
+        <tr><td>צבע</td><td>אפור מלאנז' + קוניאק</td></tr>
+        <tr><td>ידית</td><td>כפולה + רצועת כתף</td></tr>
+        <tr><td>סגירה</td><td>2 רוכסנים איכותיים</td></tr>
+        <tr><td>כיס צדי</td><td>רשת לבקבוקים</td></tr>
+        <tr><td>חומר</td><td>פוליאסטר עמיד מים</td></tr>
+        <tr><td>לוגו</td><td>Desert Peax רקום</td></tr>
+      </table>
+    </div>
+    <div class="pc-footer">
+      <div class="pc-price"><span class="price-contact">צרו קשר לפרטים</span></div>
+      <a href="#contact" class="pc-btn secondary">פנייה</a>
+    </div>
+  </div>
+</div>
+
+<!-- Empty state -->
+<div class="empty-state hidden" id="emptyState">
+  <div class="empty-state-icon">🔍</div>
+  <h3>לא נמצאו מוצרים</h3>
+  <p>נסו לחפש מחדש או לבחור קטגוריה אחרת</p>
+</div>
+
+    </div><!-- /product-grid -->
+  </div>
+</section>
+
+<!-- ═══════════════════════ B2B ═══════════════════════ -->
+<section class="b2b fade" id="b2b">
+  <div class="b2b-inner">
+    <div class="b2b-photo">
+      <img src="תמונות/photo_5771430594440007138_y.jpg" alt="קמפינג עם Desert Peax"/>
+      <div class="b2b-photo-overlay">
+        <div class="b2b-photo-logo"><img src="תמונות/LOGO.png" alt="Desert Peax"/></div>
+      </div>
+    </div>
+    <div class="b2b-content">
+      <div class="b2b-content-inner">
+        <p class="sec-label">לעסקים ולארגונים</p>
+        <h2 class="b2b-headline" data-e="b2b-headline">מתנה<br/>שנשארת<br/>בזיכרון</h2>
+        <p class="b2b-lead" data-e="b2b-lead">ציוד שדה הוא המתנה שכולם רוצים ולא כולם חושבים לתת — חוויה שיזכרו כל פעם שהם יוצאים לטבע.</p>
+        <div class="b2b-list">
+          <div class="b2b-item">
+            <span class="b2b-num">01</span>
+            <div class="b2b-item-text">
+              <h4 data-e="b2b-01-title">מתנות לחג</h4>
+              <p data-e="b2b-01-text">ראש השנה, חנוכה, פסח — ציוד שמשתמשים בו כל שנה, לא מניחים במגירה</p>
+            </div>
+          </div>
+          <div class="b2b-item">
+            <span class="b2b-num">02</span>
+            <div class="b2b-item-text">
+              <h4 data-e="b2b-02-title">ימי כיף וגיבוש</h4>
+              <p data-e="b2b-02-text">ציידו את הצוות בכסאות ושולחנות Desert Peax ותצרו חוויה בלתי נשכחת</p>
+            </div>
+          </div>
+          <div class="b2b-item">
+            <span class="b2b-num">03</span>
+            <div class="b2b-item-text">
+              <h4 data-e="b2b-03-title">פרסים ותמריצים</h4>
+              <p data-e="b2b-03-text">מתנות לעובדים מצטיינים ולסגירת עסקה — ציוד שמראה שהם שווים</p>
+            </div>
+          </div>
+          <div class="b2b-item">
+            <span class="b2b-num">04</span>
+            <div class="b2b-item-text">
+              <h4 data-e="b2b-04-title">מתנות ללקוחות</h4>
+              <p data-e="b2b-04-text">בלטו מעל המתחרים עם מתנה מקצועית שנשארת — לא בפח</p>
+            </div>
+          </div>
+        </div>
+        <div class="b2b-note" data-e="b2b-note">מ-10 יחידות · מחיר ארגוני · לוגו החברה על המוצרים</div>
+        <a href="#contact" class="b2b-cta">פנו אלינו לפרטים ←</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ PACKAGES ═════════════════ -->
+<section class="packages fade" id="packages">
+  <div class="container">
+    <p class="sec-label">הצעות לארגונים</p>
+    <h2 class="sec-title" data-e="pkg-title">חבילות B2B מוכנות</h2>
+    <p class="sec-sub" data-e="pkg-sub">בנינו בשבילכם חבילות מוכנות לכל תקציב וצורך — כולן ניתנות להתאמה אישית.</p>
+    <div class="pkgs">
+
+      <div class="pkg fade">
+        <div class="pkg-head">
+          <img src="תמונות/photo_5771430594440007135_y.jpg" alt="חבילת חג"/>
+          <div class="pkg-head-overlay">
+            <div class="pkg-head-name">חבילת חג</div>
+            <div class="pkg-head-tag">לכל עובד ועובדת</div>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <ul class="pkg-items">
+            <li>כסא קמפינג Classic או Breez</li>
+            <li>שק שינה לשטח</li>
+            <li>אריזת מתנה ממותגת</li>
+            <li>משלוח לנקודה אחת</li>
+          </ul>
+        </div>
+        <div class="pkg-foot">
+          <div class="pkg-price-note">מחיר ליחידה (מ-10 יח')</div>
+          <div class="pkg-price" data-e="pkg1-price">~₪309</div>
+          <div class="pkg-disc" data-e="pkg1-disc">* תלוי כמות ואפשרויות עיצוב</div>
+          <a href="#contact" class="pkg-cta">בקשו הצעת מחיר</a>
+        </div>
+      </div>
+
+      <div class="pkg star fade">
+        <div class="pkg-star-label">🔥 הכי פופולרי</div>
+        <div class="pkg-head">
+          <img src="תמונות/photo_5771430594440007136_y.jpg" alt="חבילת גיבוש"/>
+          <div class="pkg-head-overlay">
+            <div class="pkg-head-name">חבילת גיבוש</div>
+            <div class="pkg-head-tag">ליום כיף לחברה</div>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <ul class="pkg-items">
+            <li>כסא קמפינג Breez (Mesh)</li>
+            <li>שולחן שטח יוקרתי</li>
+            <li>מזרן שטח זוגי</li>
+            <li>אריזת מתנה ממותגת</li>
+            <li>לוגו החברה על המוצרים</li>
+          </ul>
+        </div>
+        <div class="pkg-foot">
+          <div class="pkg-price-note">מחיר ליחידה (מ-10 יח')</div>
+          <div class="pkg-price" data-e="pkg2-price">~₪717</div>
+          <div class="pkg-disc" data-e="pkg2-disc">* תלוי כמות ואפשרויות עיצוב</div>
+          <a href="#contact" class="pkg-cta">בקשו הצעת מחיר</a>
+        </div>
+      </div>
+
+      <div class="pkg cognac-theme fade">
+        <div class="pkg-head">
+          <img src="תמונות/photo_5771754280355303098_y.jpg" alt="חבילת פרמיום"/>
+          <div class="pkg-head-overlay">
+            <div class="pkg-head-name">חבילת פרמיום</div>
+            <div class="pkg-head-tag">ללקוחות ומנהלים בכירים</div>
+          </div>
+        </div>
+        <div class="pkg-body">
+          <ul class="pkg-items">
+            <li>גגון צד לרכב 90°</li>
+            <li>2 כסאות Classic</li>
+            <li>שולחן שטח יוקרתי</li>
+            <li>עיצוב ומיתוג אישי</li>
+            <li>שירות White Glove</li>
+          </ul>
+        </div>
+        <div class="pkg-foot">
+          <div class="pkg-price-note">מחיר ליחידה (מ-5 יח')</div>
+          <div class="pkg-price" data-e="pkg3-price">~₪1,337</div>
+          <div class="pkg-disc" data-e="pkg3-disc">* תלוי כמות ואפשרויות עיצוב</div>
+          <a href="#contact" class="pkg-cta">בקשו הצעת מחיר</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ WHY ═══════════════════════ -->
+<section class="why fade">
+  <div class="container">
+    <div style="text-align:center">
+      <p class="sec-label">למה Desert Peax</p>
+      <h2 class="sec-title">המספרים שלנו</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-num" data-e="why1-num">180<small style="font-size:1.4rem">ק"ג</small></div><div class="why-title" data-e="why1-title">כושר נשיאה</div><div class="why-desc" data-e="why1-desc">כסאות שעומדים בכל עומס</div></div>
+      <div class="why-card"><div class="why-num" data-e="why2-num">12<small style="font-size:1.4rem">חד'</small></div><div class="why-title" data-e="why2-title">אחריות מלאה</div><div class="why-desc" data-e="why2-desc">כיסוי מלא על כל המוצרים</div></div>
+      <div class="why-card"><div class="why-num" data-e="why3-num">24/6</div><div class="why-title" data-e="why3-title">שירות לקוחות</div><div class="why-desc" data-e="why3-desc">תמיד שם בשבילכם</div></div>
+      <div class="why-card"><div class="why-num" data-e="why4-num">🇮🇱</div><div class="why-title" data-e="why4-title">מותג ישראלי</div><div class="why-desc" data-e="why4-desc">ציוד שנבדק בשטח הישראלי</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CTA ═══════════════════════ -->
+<div class="cta" id="contact">
+  <div class="container">
+    <h2 data-e="cta-title">מוכנים לציוד את הצוות?</h2>
+    <p data-e="cta-text">השאירו פרטים ונחזור אליכם תוך 24 שעות עם הצעת מחיר מותאמת</p>
+    <div class="cta-btns">
+      <a href="tel:0559620768" class="cta-primary" data-e="cta-phone">📞 055-962-0768</a>
+      <a href="https://wa.me/9720559620768?text=שלום%2C+אני+מעוניין+בהצעת+מחיר+B2B" class="cta-primary cta-wa">💬 WhatsApp</a>
+      <a href="mailto:contact@desertpeax.co.il?subject=פנייה+B2B+ארגונית" class="cta-secondary" data-e="cta-email">✉️ contact@desertpeax.co.il</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ FOOTER ════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-pill"><img src="תמונות/LOGO.png" alt="Desert Peax"/></div>
+        <p data-e="footer-brand-text">ציוד קמפינג מקצועי לכל הרפתקה. נבחר בשטח, נשלח לביתך.<br/>Gear Up Your Freedom.</p>
+      </div>
+      <div class="footer-col">
+        <h4>מוצרים</h4>
+        <ul>
+          <li><a href="#catalog">כסאות קמפינג</a></li>
+          <li><a href="#catalog">שולחן שטח</a></li>
+          <li><a href="#catalog">מזרנים</a></li>
+          <li><a href="#catalog">שק שינה</a></li>
+          <li><a href="#catalog">אוהלים</a></li>
+          <li><a href="#catalog">ציוד לרכב</a></li>
+          <li><a href="#catalog">תיקי קירור</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>צור קשר</h4>
+        <ul>
+          <li>📞 <a href="tel:0559620768" data-e="footer-phone">055-962-0768</a></li>
+          <li>✉️ <a href="mailto:contact@desertpeax.co.il" data-e="footer-email">contact@desertpeax.co.il</a></li>
+          <li>🌐 <a href="https://desertpeax.co.il" target="_blank" data-e="footer-website">desertpeax.co.il</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span data-e="footer-copy">© 2025 Desert Peax. כל הזכויות שמורות.</span>
+      <span data-e="footer-tag">קטלוג B2B — לשימוש עם לקוחות עסקיים</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════ EDIT MODE FAB ════════════ -->
+<div class="em-bar">מצב עריכה פעיל — לחצו על כל טקסט לעריכה, על 💾 לשמירה</div>
+<button class="em-fab" id="emFab" onclick="toggleEdit()" title="מצב עריכה">✏️</button>
+<div class="em-toast" id="emToast"></div>
+<input type="file" id="emFileInput" accept="image/*" style="display:none"/>
+
+<!-- ═══════════════════════ SCRIPTS ═════════════════ -->
+<script>
+/* Navbar scroll */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), {passive:true});
+
+/* Hero zoom */
+setTimeout(() => document.getElementById('heroBg').classList.add('zoomed'), 100);
+
+/* Fade-in observer */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+}, {threshold:.1, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade').forEach(el => io.observe(el));
+
+/* Gallery image swap */
+function swapImg(imgId, thumbEl, src){
+  document.getElementById(imgId).src = src;
+  thumbEl.closest('.pc-img-wrap').querySelectorAll('.pc-thumb').forEach(t => t.classList.remove('active'));
+  thumbEl.classList.add('active');
+}
+
+/* Specs toggle */
+function toggleSpecs(btn){
+  const body = btn.nextElementSibling;
+  const card = btn.closest('.pc-body');
+  const isOpen = card.classList.toggle('specs-open');
+  btn.querySelector('span:first-child').textContent = isOpen ? 'הסתר פרטים' : 'פרטים טכניים מלאים';
+}
+
+/* Category filter */
+const cards = Array.from(document.querySelectorAll('.pc'));
+document.getElementById('catBar').addEventListener('click', e => {
+  const btn = e.target.closest('.cat-btn');
+  if(!btn) return;
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filter();
+});
+
+/* Search */
+document.getElementById('searchInput').addEventListener('input', filter);
+
+/* Sort */
+document.getElementById('sortSelect').addEventListener('change', () => {
+  sortCards();
+  updateCount();
+});
+
+function filter(){
+  const cat = document.querySelector('.cat-btn.active').dataset.cat;
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
+  let visible = 0;
+  cards.forEach(c => {
+    const matchCat = cat === 'all' || c.dataset.cat === cat;
+    const name = (c.dataset.name || '').toLowerCase();
+    const matchQ = !q || name.includes(q) || c.dataset.cat.includes(q);
+    const show = matchCat && matchQ;
+    c.style.display = show ? '' : 'none';
+    if(show) visible++;
+  });
+  document.getElementById('emptyState').classList.toggle('hidden', visible > 0);
+  document.getElementById('countDisplay').textContent = visible;
+  sortCards();
+}
+
+function sortCards(){
+  const val = document.getElementById('sortSelect').value;
+  const grid = document.getElementById('productGrid');
+  const visible = cards.filter(c => c.style.display !== 'none');
+  visible.sort((a,b) => {
+    if(val === 'price-asc')  return +a.dataset.price - +b.dataset.price;
+    if(val === 'price-desc') return +b.dataset.price - +a.dataset.price;
+    if(val === 'name')       return (a.dataset.name||'').localeCompare(b.dataset.name||'', 'he');
+    return 0;
+  });
+  visible.forEach(c => grid.appendChild(c));
+}
+
+function updateCount(){
+  const visible = cards.filter(c => c.style.display !== 'none').length;
+  document.getElementById('countDisplay').textContent = visible;
+}
+
+/* Smooth scroll */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
+  });
+});
+
+/* ── EDIT MODE ─────────────────────────────────────── */
+const STORAGE_KEY = 'dp_catalog_edits';
+const STORAGE_IMGS = 'dp_catalog_imgs';
+let editActive = false;
+let pendingImgId = null;
+
+function toggleEdit(){
+  editActive = !editActive;
+  document.body.classList.toggle('em', editActive);
+  const fab = document.getElementById('emFab');
+  if(editActive){
+    fab.classList.add('active');
+    fab.innerHTML = '💾 שמור';
+    document.querySelectorAll('[data-e]').forEach(el => el.setAttribute('contenteditable','true'));
+  } else {
+    fab.classList.remove('active');
+    fab.innerHTML = '✏️';
+    document.querySelectorAll('[data-e]').forEach(el => el.removeAttribute('contenteditable'));
+    saveEdits();
+    showToast('✅ השינויים נשמרו!');
+  }
+}
+
+function saveEdits(){
+  const data = {};
+  document.querySelectorAll('[data-e]').forEach(el => { data[el.dataset.e] = el.innerHTML; });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadEdits(){
+  try{
+    const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    Object.entries(data).forEach(([k,v]) => {
+      const el = document.querySelector('[data-e="'+k+'"]');
+      if(el) el.innerHTML = v;
+    });
+    const imgs = JSON.parse(localStorage.getItem(STORAGE_IMGS) || '{}');
+    Object.entries(imgs).forEach(([id,src]) => {
+      const el = document.getElementById(id);
+      if(el) el.src = src;
+    });
+  } catch(e){}
+}
+
+function replaceImage(imgId){
+  if(!editActive){ showToast('ℹ️ הפעל מצב עריכה קודם'); return; }
+  pendingImgId = imgId;
+  document.getElementById('emFileInput').click();
+}
+
+document.getElementById('emFileInput').addEventListener('change', function(){
+  const file = this.files[0];
+  if(!file || !pendingImgId) return;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    const src = e.target.result;
+    const el = document.getElementById(pendingImgId);
+    if(el){ el.src = src; }
+    try{
+      const imgs = JSON.parse(localStorage.getItem(STORAGE_IMGS) || '{}');
+      imgs[pendingImgId] = src;
+      localStorage.setItem(STORAGE_IMGS, JSON.stringify(imgs));
+    } catch(err){}
+    showToast('🖼 התמונה הוחלפה!');
+    pendingImgId = null;
+  };
+  reader.readAsDataURL(file);
+  this.value = '';
+});
+
+function showToast(msg){
+  const t = document.getElementById('emToast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+window.addEventListener('load', loadEdits);
+</script>
+</body>
+</html>
