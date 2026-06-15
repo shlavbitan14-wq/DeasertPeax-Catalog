@@ -1,0 +1,6 @@
+node_modules/
+package-lock.json
+.claude/launch.json
+_shot*.js
+shot-*.png
+*.tmp

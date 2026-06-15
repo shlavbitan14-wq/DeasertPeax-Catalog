@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Desert Peax · קטלוג מוצרים</title>
+<meta name="description" content="משלוחים לכל הארץ · רכישה ישירה באתר"/>
+<link rel="icon" href="https://desertpeax.co.il/wp-content/uploads/2025/01/Main-Transparent-e1739573611716-1024x370.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{--ink:#1A1A1A;--gray:#7C7264;--label:#A89070;--sand:#F0E8DC;--cream:#F7F4EF;--card:#F0E8DC;--line:#E2D6BE;--gold:#C9A84C}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--cream)}
+body{font-family:'Assistant',sans-serif;color:var(--ink);line-height:1.55;-webkit-print-color-adjust:exact;print-color-adjust:exact;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.peaks{width:118px;height:26px;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+
+/* ── כותרת / שער ── */
+.cover{text-align:center;padding:54px 26px 34px}
+.cover img.logo{height:64px;width:auto;margin:0 auto 22px}
+.cover .peaks{margin:0 auto 20px}
+.kicker{font-size:.82rem;font-weight:700;letter-spacing:.32em;color:var(--label);text-transform:uppercase}
+.cover h1{font-size:2.2rem;font-weight:800;letter-spacing:-.01em;margin:8px 0 12px}
+.cover h1::after{content:"";display:block;width:46px;height:3px;background:var(--gold);margin:14px auto 0;border-radius:2px}
+.cover .lead{color:var(--gray);font-size:1rem;font-weight:500}
+.rule{height:1px;background:var(--line);max-width:1120px;margin:6px auto 0}
+
+/* ── סינון (לא מודפס) ── */
+.tools{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:center;padding:22px 26px 4px}
+.search{position:relative}
+.search input{width:230px;padding:9px 38px 9px 14px;border:1px solid var(--line);border-radius:2px;background:#fbf8f1;font-family:inherit;font-size:.92rem;color:var(--ink)}
+.search input:focus{outline:none;border-color:var(--ink)}
+.search::before{content:"⌕";position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--gray);font-size:1.1rem}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.chip{background:transparent;border:1px solid var(--line);color:var(--ink);font-family:inherit;font-weight:600;font-size:.85rem;padding:8px 16px;border-radius:2px;cursor:pointer;transition:.15s}
+.chip:hover{border-color:var(--ink)}
+.chip.active{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+
+/* ── רשת מוצרים ── */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:34px 26px;padding:34px 0 12px}
+.item{display:flex;flex-direction:column}
+.ph{position:relative;display:block;background:var(--sand);overflow:hidden}
+.ph-in{display:block;position:relative;padding-top:100%}
+.ph-in img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.4s ease}
+.item:hover .ph-in img{transform:scale(1.035)}
+.badge{position:absolute;top:10px;right:10px;background:var(--ink);color:var(--cream);font-size:.7rem;font-weight:700;letter-spacing:.04em;padding:4px 10px}
+.meta{padding-top:14px;display:flex;flex-direction:column;flex:1}
+.cat{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--label)}
+.name{font-size:1.08rem;font-weight:700;margin-top:5px;letter-spacing:-.01em}
+.desc{font-size:.86rem;color:var(--gray);font-weight:500;margin-top:5px;flex:1}
+.foot{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-top:14px;padding-top:13px;border-top:1px solid var(--line)}
+.price{font-size:1.18rem;font-weight:800;display:flex;flex-direction:column;line-height:1.18}
+.plabel{font-size:.64rem;font-weight:600;color:var(--gray);letter-spacing:.04em}
+.pnote{font-size:.62rem;font-weight:600;color:var(--gray);margin-top:2px}
+.cta{font-weight:700;font-size:.88rem;color:var(--ink);white-space:nowrap;border-bottom:1.5px solid var(--ink);padding-bottom:2px;transition:.15s}
+.cta span{font-weight:700}
+.cta:hover{opacity:.6}
+.cta-soft{color:var(--gray);border-color:var(--line)}
+.empty{grid-column:1/-1;text-align:center;color:var(--gray);padding:50px;font-weight:600}
+
+/* ── פוטר ── */
+.foot-band{background:var(--ink);color:var(--cream);margin-top:46px;padding:42px 26px}
+.foot-in{max-width:1120px;margin:0 auto;text-align:center}
+.foot-in .peaks{margin:0 auto 16px}
+.foot-in .fbrand{font-size:1.3rem;font-weight:800;letter-spacing:.02em}
+.foot-in .ftag{color:#C8B89A;font-size:.9rem;margin-top:4px}
+.foot-links{display:flex;gap:26px;flex-wrap:wrap;justify-content:center;margin-top:20px;font-size:.94rem;font-weight:600}
+.foot-links a{border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:2px}
+.foot-upd{color:#8e887b;font-size:.78rem;margin-top:22px}
+
+/* ── רספונסיבי (אייפד וטלפון) ── */
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr);gap:30px 22px}}
+@media(max-width:720px){.grid{grid-template-columns:repeat(2,1fr);gap:26px 16px}.cover h1{font-size:1.7rem}.cover{padding:38px 22px 26px}}
+@media(max-width:430px){.grid{grid-template-columns:repeat(2,1fr);gap:20px 12px}.name{font-size:.96rem}.price{font-size:1.05rem}.cta{font-size:.8rem}}
+
+/* ── הדפסה / PDF ── */
+@page{size:A4;margin:14mm 12mm}
+@media print{
+  .tools{display:none!important}
+  .wrap{max-width:none;padding:0}
+  .foot-band{margin-top:22px;padding:26px}
+  .cover{padding:6px 0 14px}
+  .cover img.logo{height:54px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:16px 18px;padding:14px 0 0}
+  .item{break-inside:avoid;page-break-inside:avoid}
+  .item:hover .ph-in img{transform:none}
+  .name{font-size:1.12rem}
+  a[target]{color:inherit}
+  body{background:var(--cream)}
+}
+</style>
+</head>
+<body>
+<header class="cover">
+  <img class="logo" src="https://desertpeax.co.il/wp-content/uploads/2025/01/Main-Transparent-e1739573611716-1024x370.png" alt="Desert Peax"/>
+  <svg class="peaks" viewBox="0 0 120 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 22 L34 8 L46 16 L70 4 L86 14 L118 22" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="kicker">קטלוג מוצרים</div>
+  <h1>הקטלוג שלנו</h1>
+  <div class="lead">משלוחים לכל הארץ · רכישה ישירה באתר</div>
+</header>
+<div class="rule"></div>
+
+<div class="tools">
+  <div class="search"><input type="text" id="q" placeholder="חיפוש מוצר…" autocomplete="off"/></div>
+  <div class="chips"><button class="chip active" data-cat="">הכול</button><button class="chip" data-cat="אקסטרים">אקסטרים</button><button class="chip" data-cat="לרכב">לרכב</button><button class="chip" data-cat="לשטח">לשטח</button></div>
+</div>
+
+<main class="wrap">
+  <div class="grid" id="grid">
+      <article class="item" data-name="כיסא מתקפל דגם &quot;נווה&quot;" data-cat="לשטח">
+        <a class="ph" href="https://desertpeax.co.il/product/%d7%9b%d7%99%d7%a1%d7%90-%d7%9e%d7%aa%d7%a7%d7%a4%d7%9c-%d7%93%d7%92%d7%9d-%d7%a0%d7%95%d7%95%d7%94/" target="_blank" rel="noopener">
+          <span class="ph-in"><img src="https://desertpeax.co.il/wp-content/uploads/2026/05/תמונה-ראשית-600x600.webp" alt="כיסא מתקפל דגם &quot;נווה&quot;" loading="lazy"/></span>
+        </a>
+        <div class="meta">
+          <div class="cat">לשטח</div>
+          <h3 class="name">כיסא מתקפל דגם &quot;נווה&quot;</h3>
+          <p class="desc">כיסא מתקפל לים דגם &quot;נווה&quot; בעיצוב נקי, נוח וקומפקטי, כזה שבדיוק מתאים לים! .dp-clean-list…</p>
+          <div class="foot"><div class="price">₪99</div><a class="cta" href="https://desertpeax.co.il/product/%d7%9b%d7%99%d7%a1%d7%90-%d7%9e%d7%aa%d7%a7%d7%a4%d7%9c-%d7%93%d7%92%d7%9d-%d7%a0%d7%95%d7%95%d7%94/" target="_blank" rel="noopener">לרכישה <span>›</span></a></div>
+        </div>
+      </article>
+      <article class="item" data-name="מזרן שטח יחיד מתנפח" data-cat="לשטח">
+        <a class="ph" href="https://desertpeax.co.il/product/camping-mattress-single/" target="_blank" rel="noopener">
+          <span class="ph-in"><img src="https://desertpeax.co.il/wp-content/uploads/2025/12/Gemini_Generated_Image_99cgj399cgj399cg-600x600.webp" alt="מזרן שטח יחיד מתנפח" loading="lazy"/></span>
+        </a>
+        <div class="meta">
+          <div class="cat">לשטח</div>
+          <h3 class="name">מזרן שטח יחיד מתנפח</h3>
+          <p class="desc">שינה טובה מתחילה בציוד נכון. מזרן השטח היחיד של DesertPeax מעניק נוחות אמיתית בשטח, כך שתוכלו…</p>
+          <div class="foot"><div class="price">₪189</div><a class="cta" href="https://desertpeax.co.il/product/camping-mattress-single/" target="_blank" rel="noopener">לרכישה <span>›</span></a></div>
+        </div>
+      </article>
+      <article class="item" data-name="כסא קמפינג breez" data-cat="לשטח">
+        <a class="ph" href="https://desertpeax.co.il/product/camping-chair-flex/" target="_blank" rel="noopener">
+          <span class="ph-in"><img src="https://desertpeax.co.il/wp-content/uploads/2025/07/תמונה-ראשית-2-600x600.webp" alt="כסא קמפינג Breez" loading="lazy"/></span>
+        </a>
+        <div class="meta">
+          <div class="cat">לשטח</div>
+          <h3 class="name">כסא קמפינג Breez</h3>
+          <p class="desc">הכיסא המושלם של Desert Peax – דגם Flex . עמידות למשקל גבוה יציבות ונוחות בכל שטח קל משקל ונוח…</p>
+          <div class="foot"><div class="price">₪189</div><a class="cta" href="https://desertpeax.co.il/product/camping-chair-flex/" target="_blank" rel="noopener">לרכישה <span>›</span></a></div>
+        </div>
+      </article>
+      <article class="item" data-name="כיסא קמפינג קלאסיק" data-cat="לשטח">
+        <a class="ph" href="https://desertpeax.co.il/product/%d7%9b%d7%99%d7%a1%d7%90-%d7%a7%d7%9e%d7%a4%d7%99%d7%a0%d7%92-%d7%9e%d7%aa%d7%a7%d7%a4%d7%9c-%d7%9c%d7%98%d7%99%d7%95%d7%9c%d7%99%d7%9d/" target="_blank" rel="noopener">
+          <span class="ph-in"><img src="https://desertpeax.co.il/wp-content/uploads/2025/07/תמונה-ראשית-אפור-600x600.png" alt="כיסא קמפינג קלאסיק" loading="lazy"/></span>
+        </a>
+        <div class="meta">
+          <div class="cat">לשטח</div>
+          <h3 class="name">כיסא קמפינג קלאסיק</h3>
+          <p class="desc">הכיסא המושלם של Desert Peax – דגם Classic . עמידות למשקל גבוה יציבות ונוחות בכל שטח קל משקל…</p>
+          <div class="foot"><div class="price">₪189</div><a class="cta" href="https://desertpeax.co.il/product/%d7%9b%d7%99%d7%a1%d7%90-%d7%a7%d7%9e%d7%a4%d7%99%d7%a0%d7%92-%d7%9e%d7%aa%d7%a7%d7%a4%d7%9c-%d7%9c%d7%98%d7%99%d7%95%d7%9c%d7%99%d7%9d/" target="_blank" rel="noopener">לרכישה <span>›</span></a></div>
+        </div>
+      </article>
+      <article class="item" data-name="מזרן שטח זוגי מתנפח" data-cat="לשטח">
+        <a class="ph" href="https://desertpeax.co.il/product/camping-mattress-double/" target="_blank" rel="noopener">
+          <span class="ph-in"><img src="https://desertpeax.co.il/wp-content/uploads/2025/12/Mattres-600x600.webp" alt="מזרן שטח זוגי מתנפח" loading="lazy"/></span>
+        </a>
+        <div class="meta">
+          <div class="cat">לשטח</div>
+          <h3 class="name">מזרן שטח זוגי מתנפח</h3>
+          <p class="desc">כשיוצאים לשטח – לא מתפשרים על שינה טובה. המזרן הזוגי של DesertPeax מעניק נוחות אמיתית בשטח, כך…</p>
+          <div class="foot"><div class="price">₪239</div><a class="cta" href="https://desertpeax.co.il/product/camping-mattress-double/" target="_blank" rel="noopener">לרכישה <span>›</span></a></div>
+        </div>
+      </article>
+      <article class="item" data-name="שק שינה לשטח" data-cat="אקסטרים לשטח">
+        <a class="ph" href="https://desertpeax.co.il/product/sleeping-bag/" target="_blank" rel="noopener">
+          <span class="ph-in"><img src="https://desertpeax.co.il/wp-content/uploads/2025/12/img_0009.jpeg" alt="שק שינה לשטח" loading="lazy"/></span><span class="badge">אזל זמנית</span>
+        </a>
+        <div class="meta">
+          <div class="cat">אקסטרים · לשטח</div>
+          <h3 class="name">שק שינה לשטח</h3>
+          <p class="desc">שק שינה נוח ומבודד לשטח מבית DesertPeax, המעניק חום ונוחות גם בלילות קרים. קל לנשיאה, עמיד…</p>
+          <div class="foot"><div class="price">₪120</div><a class="cta cta-soft" href="https://wa.me/972559620768?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A2%D7%93%D7%9B%D7%95%D7%9F%20%D7%A2%D7%9C%20%D7%97%D7%96%D7%A8%D7%AA%20%D7%94%D7%9E%D7%9C%D7%90%D7%99%20%D7%A9%D7%9C%3A%20%D7%A9%D7%A7%20%D7%A9%D7%99%D7%A0%D7%94%20%D7%9C%D7%A9%D7%98%D7%97" target="_blank" rel="noopener">עדכנו אותי</a></div>
+        </div>
+      </article>
+      <article class="item" data-name="שולחן שטח יוקרתי" data-cat="לרכב לשטח">
+        <a class="ph" href="https://desertpeax.co.il/product/folding-camping-table/" target="_blank" rel="noopener">
+          <span class="ph-in"><img src="https://desertpeax.co.il/wp-content/uploads/2025/12/image-600x600.png" alt="שולחן שטח יוקרתי" loading="lazy"/></span><span class="badge">אזל זמנית</span>
+        </a>
+        <div class="meta">
+          <div class="cat">לרכב · לשטח</div>
+          <h3 class="name">שולחן שטח יוקרתי</h3>
+          <p class="desc">שולחן קמפינג טלסקופי מתקפל עם 3 גבהים – DesertPeax כשיוצאים לשטח, לשים ציוד על הקרקע זה לא…</p>
+          <div class="foot"><div class="price">₪299</div><a class="cta cta-soft" href="https://wa.me/972559620768?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A2%D7%93%D7%9B%D7%95%D7%9F%20%D7%A2%D7%9C%20%D7%97%D7%96%D7%A8%D7%AA%20%D7%94%D7%9E%D7%9C%D7%90%D7%99%20%D7%A9%D7%9C%3A%20%D7%A9%D7%95%D7%9C%D7%97%D7%9F%20%D7%A9%D7%98%D7%97%20%D7%99%D7%95%D7%A7%D7%A8%D7%AA%D7%99" target="_blank" rel="noopener">עדכנו אותי</a></div>
+        </div>
+      </article>
+      <article class="item" data-name="אוהל oasis 8 שני חדרים" data-cat="אקסטרים לשטח">
+        <a class="ph" href="https://desertpeax.co.il/product/ohel-8-anashim-oasis-8/" target="_blank" rel="noopener">
+          <span class="ph-in"><img src="https://desertpeax.co.il/wp-content/uploads/2025/12/תמונה-11-600x600.webp" alt="אוהל Oasis 8 שני חדרים" loading="lazy"/></span><span class="badge">אזל זמנית</span>
+        </a>
+        <div class="meta">
+          <div class="cat">אקסטרים · לשטח</div>
+          <h3 class="name">אוהל Oasis 8 שני חדרים</h3>
+          <p class="desc">אוהל משפחתי גדול ל-8 אנשים עם 2 חדרים נהנים ממקום נוח לעד 8 אנשים מקבלים שטח מרווח של…</p>
+          <div class="foot"><div class="price">₪679</div><a class="cta cta-soft" href="https://wa.me/972559620768?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A2%D7%93%D7%9B%D7%95%D7%9F%20%D7%A2%D7%9C%20%D7%97%D7%96%D7%A8%D7%AA%20%D7%94%D7%9E%D7%9C%D7%90%D7%99%20%D7%A9%D7%9C%3A%20%D7%90%D7%95%D7%94%D7%9C%20Oasis%208%20%D7%A9%D7%A0%D7%99%20%D7%97%D7%93%D7%A8%D7%99%D7%9D" target="_blank" rel="noopener">עדכנו אותי</a></div>
+        </div>
+      </article>
+      <article class="item" data-name="סוכך צד לרכב 90°" data-cat="אקסטרים לרכב">
+        <a class="ph" href="https://desertpeax.co.il/product/%d7%a1%d7%95%d7%9b%d7%9a-%d7%a6%d7%93-%d7%9c%d7%a8%d7%9b%d7%91/" target="_blank" rel="noopener">
+          <span class="ph-in"><img src="https://desertpeax.co.il/wp-content/uploads/2026/05/תמונה-ראשית9-600x600.webp" alt="סוכך צד לרכב 90°" loading="lazy"/></span><span class="badge">אזל זמנית</span>
+        </a>
+        <div class="meta">
+          <div class="cat">אקסטרים · לרכב</div>
+          <h3 class="name">סוכך צד לרכב 90°</h3>
+          <p class="desc">גגון צד לרכב DesertPeax גגון הצד של DesertPeax יוצר פינת צל רחבה ונוחה ליד הרכב. כך תוכלו…</p>
+          <div class="foot"><div class="price">₪899</div><a class="cta cta-soft" href="https://wa.me/972559620768?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A2%D7%93%D7%9B%D7%95%D7%9F%20%D7%A2%D7%9C%20%D7%97%D7%96%D7%A8%D7%AA%20%D7%94%D7%9E%D7%9C%D7%90%D7%99%20%D7%A9%D7%9C%3A%20%D7%A1%D7%95%D7%9B%D7%9A%20%D7%A6%D7%93%20%D7%9C%D7%A8%D7%9B%D7%91%2090%C2%B0" target="_blank" rel="noopener">עדכנו אותי</a></div>
+        </div>
+      </article>
+      <article class="item" data-name="גגון צד לרכב עם סגירת קירות צד" data-cat="אקסטרים לרכב">
+        <a class="ph" href="https://desertpeax.co.il/product/gagon-tzad-lerechev-im-kirot/" target="_blank" rel="noopener">
+          <span class="ph-in"><img src="https://desertpeax.co.il/wp-content/uploads/2025/12/6555141C-1E22-40B1-B316-846159A7A974-600x600.jpeg" alt="גגון צד לרכב עם סגירת קירות צד" loading="lazy"/></span><span class="badge">אזל זמנית</span>
+        </a>
+        <div class="meta">
+          <div class="cat">אקסטרים · לרכב</div>
+          <h3 class="name">גגון צד לרכב עם סגירת קירות צד</h3>
+          <p class="desc">גגון צד לרכב עם קירות סגירה של DesertPeax, פורסים תוך דקות ויוצרים מרחב מוגן ופרטי לצד הרכב.…</p>
+          <div class="foot"><div class="price">₪2,299</div><a class="cta cta-soft" href="https://wa.me/972559620768?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A2%D7%93%D7%9B%D7%95%D7%9F%20%D7%A2%D7%9C%20%D7%97%D7%96%D7%A8%D7%AA%20%D7%94%D7%9E%D7%9C%D7%90%D7%99%20%D7%A9%D7%9C%3A%20%D7%92%D7%92%D7%95%D7%9F%20%D7%A6%D7%93%20%D7%9C%D7%A8%D7%9B%D7%91%20%D7%A2%D7%9D%20%D7%A1%D7%92%D7%99%D7%A8%D7%AA%20%D7%A7%D7%99%D7%A8%D7%95%D7%AA%20%D7%A6%D7%93" target="_blank" rel="noopener">עדכנו אותי</a></div>
+        </div>
+      </article>
+    <div class="empty" id="empty" style="display:none">לא נמצאו מוצרים תואמים</div>
+  </div>
+</main>
+
+<footer class="foot-band">
+  <div class="foot-in">
+    <svg class="peaks" viewBox="0 0 120 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 22 L34 8 L46 16 L70 4 L86 14 L118 22" stroke="#C8B89A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="fbrand">Desert Peax</div>
+    <div class="ftag">ציוד קמפינג ושטח · עיצוב נקי, איכות אמיתית</div>
+    <div class="foot-links">
+      <a href="https://wa.me/972559620768" target="_blank" rel="noopener">וואטסאפ 055-962-0768</a>
+      <a href="tel:055-962-0768">055-962-0768</a>
+      <a href="mailto:contact@desertpeax.co.il">contact@desertpeax.co.il</a>
+      <a href="https://desertpeax.co.il/" target="_blank" rel="noopener">desertpeax.co.il</a>
+    </div>
+    <div class="foot-upd">עודכן 15 ביוני 2026</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var grid=document.getElementById('grid'),q=document.getElementById('q'),
+      empty=document.getElementById('empty'),items=[].slice.call(grid.querySelectorAll('.item')),
+      chips=[].slice.call(document.querySelectorAll('.chip')),cat='';
+  function apply(){var t=(q.value||'').trim().toLowerCase(),n=0;
+    items.forEach(function(c){var ok=(!t||c.dataset.name.indexOf(t)>-1)&&(!cat||c.dataset.cat.indexOf(cat)>-1);
+      c.style.display=ok?'':'none';if(ok)n++;});
+    empty.style.display=n?'none':'';}
+  q.addEventListener('input',apply);
+  chips.forEach(function(ch){ch.addEventListener('click',function(){
+    chips.forEach(function(x){x.classList.remove('active')});ch.classList.add('active');cat=ch.dataset.cat;apply();});});
+})();
+</script>
+</body>
+</html>
