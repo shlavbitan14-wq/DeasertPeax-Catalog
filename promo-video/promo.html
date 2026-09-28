@@ -2,177 +2,300 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
-<title>Desert Peax — סרטון פרסומת</title>
+<title>DesertPeax — יוצאים לשטח. נשארים בנוחות.</title>
 <style>
 @font-face { font-family: 'Assistant'; font-weight: 200 800; src: url(fonts/assistant-hebrew.woff2) format('woff2'); unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
 @font-face { font-family: 'Assistant'; font-weight: 200 800; src: url(fonts/assistant-latin.woff2) format('woff2'); }
-:root {
-  --ink: #1A1A1A; --sand: #F0E8DC; --cream: #F7F4EF; --label: #A89070; --gold: #C9A84C;
-}
+:root { --ink: #1A1A1A; --sand: #F0E8DC; --gold: #C9A84C; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; font-family: 'Assistant', 'DejaVu Sans', sans-serif; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; font-family: 'Assistant', sans-serif; }
 #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
-.scene { position: absolute; inset: 0; opacity: 0; overflow: hidden; }
-.bg { position: absolute; inset: -2%; background-size: cover; background-position: center; will-change: transform; }
-.shade { position: absolute; inset: 0; }
-.txt { position: absolute; left: 70px; right: 70px; color: #fff; text-align: right; }
-.line { display: block; font-weight: 800; line-height: 1.02; letter-spacing: -1px; text-shadow: 0 6px 30px rgba(0,0,0,.45); }
-.kicker { font-weight: 700; letter-spacing: 10px; font-size: 40px; color: var(--gold); direction: ltr; text-align: right; }
-.badge { display: inline-block; font-weight: 800; font-size: 44px; color: var(--ink); background: var(--gold); padding: 6px 26px; border-radius: 10px; direction: ltr; }
-.bar { height: 10px; background: var(--gold); border-radius: 6px; transform-origin: right center; }
-.sub { font-weight: 600; font-size: 50px; color: var(--sand); text-shadow: 0 4px 20px rgba(0,0,0,.6); }
-.progress { position: absolute; top: 70px; left: 70px; right: 70px; display: flex; gap: 12px; direction: ltr; }
-.progress i { flex: 1; height: 8px; border-radius: 4px; background: rgba(255,255,255,.28); }
-.progress i.on { background: var(--gold); }
-.wm { position: absolute; top: 110px; right: 70px; display: flex; align-items: center; gap: 16px; direction: ltr; color: #fff; font-weight: 800; font-size: 40px; line-height: .9; text-shadow: 0 3px 16px rgba(0,0,0,.5); }
-.wm small { display: block; font-weight: 700; color: var(--sand); }
-.fg { position: absolute; left: 0; width: 1080px; top: 470px; border-radius: 0; box-shadow: 0 30px 80px rgba(0,0,0,.55); will-change: transform; }
-.flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }
-/* logo scene */
-.logo-wrap { position: absolute; inset: 0; background: var(--sand); display: flex; flex-direction: column; align-items: center; justify-content: center; }
-.logo { display: flex; align-items: center; gap: 36px; direction: ltr; }
-.logo .divider { width: 8px; height: 250px; background: var(--ink); transform-origin: center; }
-.logo .word { font-weight: 800; font-size: 150px; line-height: .92; color: var(--ink); letter-spacing: -2px; }
-.logo .word .peax { color: #8A8378; display: block; }
-.tagline { margin-top: 70px; font-weight: 600; font-size: 48px; letter-spacing: 6px; color: var(--label); direction: ltr; }
-.cta { margin-top: 90px; font-weight: 800; font-size: 64px; color: var(--cream); background: var(--ink); padding: 26px 60px; border-radius: 22px; direction: ltr; }
+.scene { position: absolute; inset: 0; overflow: hidden; visibility: hidden; }
+.scene img.cam { position: absolute; left: 0; top: 0; transform-origin: 0 0; max-width: none; will-change: transform, filter; }
+.scene img.ext { filter: blur(60px) brightness(.62) saturate(1.1); }
+.soft { -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 16%, #000 84%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0, #000 16%, #000 84%, transparent 100%); }
+.shade { position: absolute; inset: 0; pointer-events: none; }
+.shade.top { background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.25) 30%, rgba(0,0,0,0) 48%); }
+/* טקסט — תמיד בתוך ה-Safe Area של Reels (y≈260–1300) */
+.t { position: absolute; left: 80px; right: 80px; color: #fff; text-align: right; font-weight: 800; line-height: 1.04; letter-spacing: -1px; text-shadow: 0 4px 28px rgba(0,0,0,.35); }
+.t .ln { display: block; will-change: transform, clip-path; }
+.t.dark { color: var(--ink); text-shadow: none; }
+svg.topo { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: visible; pointer-events: none; }
+svg.topo path { fill: none; stroke: var(--gold); stroke-linecap: round; stroke-linejoin: round; }
+.logo { position: absolute; left: 50%; width: 760px; transform: translateX(-50%); }
+.cta-btn { display: inline-block; background: var(--gold); color: var(--ink); font-weight: 800; font-size: 50px; padding: 22px 56px; border-radius: 999px; }
+.blob { position: absolute; top: -200px; width: 900px; height: 2320px; border-radius: 50%; background: radial-gradient(closest-side, rgba(12,10,8,1) 55%, rgba(12,10,8,0) 100%); filter: blur(30px); visibility: hidden; }
 </style>
 </head>
 <body>
 <div id="stage"></div>
-<div class="flash" id="flash"></div>
 <script>
-const PEAKS = (c, w) => `<svg width="${w}" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 34 L40 12 L54 22 L70 8 L100 30 M40 12 L58 34" stroke="${c}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
-
+// ─── עזרים ────────────────────────────────────────────────────────────
+const W = 1080, H = 1920;
 const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
-const ease = x => 1 - Math.pow(1 - clamp(x), 3);           // easeOutCubic
-const easeBack = x => { x = clamp(x); const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
-const seg = (t, a, d) => clamp((t - a) / d);                 // 0..1 progress over [a, a+d]
+const seg = (t, a, d) => clamp((t - a) / d);
+const eOut = x => 1 - Math.pow(1 - clamp(x), 3);          // easeOutCubic
+const eQuint = x => 1 - Math.pow(1 - clamp(x), 5);        // קצר וחד, בלי bounce
+const eInOut = x => { x = clamp(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const lerp = (a, b, x) => a + (b - a) * x;
+const $ = (h) => { const d = document.createElement('div'); d.innerHTML = h.trim(); return d.firstChild; };
 
-let CFG, scenes = [], starts = [], TOTAL = 0;
+// קו טופוגרפי: קו גלי בין שתי נקודות (חתימת המותג)
+function wavy(x0, y0, x1, y1, amp = 14, waves = 3, phase = 0, n = 48) {
+  const dx = x1 - x0, dy = y1 - y0, len = Math.hypot(dx, dy), nx = -dy / len, ny = dx / len;
+  let d = '';
+  for (let i = 0; i <= n; i++) {
+    const u = i / n, o = amp * Math.sin(u * Math.PI * 2 * waves + phase) * Math.sin(u * Math.PI);
+    d += (i ? 'L' : 'M') + (x0 + dx * u + nx * o).toFixed(1) + ' ' + (y0 + dy * u + ny * o).toFixed(1);
+  }
+  return d;
+}
+function svg(paths) { return `<svg class="topo" viewBox="0 0 ${W} ${H}">${paths}</svg>`; }
+function draw(p, x, from = 0) { // x: 0..1 — כמה מהקו כבר צויר
+  const L = p.__len || (p.__len = p.getTotalLength());
+  p.style.strokeDasharray = `${L} ${L}`;
+  p.style.strokeDashoffset = from ? -L * (1 - x) : L * (1 - x);
+}
 
-function el(html) { const d = document.createElement('div'); d.innerHTML = html.trim(); return d.firstChild; }
+// מצלמה: ממקמת תמונה כך שנקודת המוקד (fx,fy) במרכז המסך, בזום z
+function cam(img, fx, fy, z, mode = 'cover', oy = 0) {
+  const iw = img.naturalWidth, ih = img.naturalHeight;
+  const base = mode === 'cover' ? Math.max(W / iw, H / ih) : W / iw;
+  const s = base * z;
+  let x = W / 2 - fx * iw * s, y = H / 2 + oy - fy * ih * s;
+  if (mode === 'cover') { x = clamp(x, W - iw * s, 0); y = clamp(y, H - ih * s, 0); }
+  img.style.transform = `translate(${x.toFixed(2)}px, ${y.toFixed(2)}px) scale(${s.toFixed(5)})`;
+}
+
+// ─── בניית הסצנות ─────────────────────────────────────────────────────
+let C, S = {};
+function scene(id, html) { const n = $(`<div class="scene" id="s-${id}">${html}</div>`); document.getElementById('stage').appendChild(n); S[id] = n; return n; }
+const img = (src, cls = '') => `<img class="cam ${cls}" src="${encodeURI(src)}">`;
+const lines = (arr, cls, style, size) => `<div class="t ${cls}" style="${style}">${arr.map((l, i) => `<span class="ln" style="font-size:${Array.isArray(size) ? size[i] : size}px">${l}</span>`).join('')}</div>`;
 
 function build(cfg) {
-  CFG = cfg;
-  const stage = document.getElementById('stage');
-  const nPkg = cfg.scenes.filter(s => s.kind === 'package').length;
-  let pkgIdx = 0;
-  cfg.scenes.forEach((s, i) => {
-    starts.push(TOTAL); TOTAL += s.duration;
-    let h = '';
-    if (s.kind === 'logo') {
-      h = `<div class="scene"><div class="logo-wrap">
-        <div class="logo"><span class="mark">${PEAKS('#1A1A1A', 300)}</span><span class="divider"></span>
-          <span class="word">Desert<span class="peax">Peax</span></span></div>
-        <div class="tagline">${s.tagline}</div>
-        <div class="cta">${s.cta}</div></div></div>`;
-    } else {
-      const shade = {
-        hook: 'linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.15) 40%, rgba(0,0,0,.8) 100%)',
-        answer: 'linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.1) 45%, rgba(0,0,0,.78) 100%)',
-        package: 'linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 50%, rgba(0,0,0,.85) 100%)',
-        proof: 'rgba(0,0,0,.55)',
-      }[s.kind];
-      let body = '';
-      if (s.kind === 'hook' || s.kind === 'answer') {
-        body = `<div class="txt" style="bottom:330px">
-          ${s.kicker ? `<div class="kicker k">${s.kicker}</div>` : ''}
-          ${s.lines.map((l, j) => `<span class="line l" style="font-size:${j ? 108 : 124}px;${j && s.kind === 'answer' ? 'color:var(--gold)' : ''}">${l}</span>`).join('')}
-        </div>`;
-      } else if (s.kind === 'package') {
-        pkgIdx++;
-        body = `<div class="progress">${Array.from({ length: nPkg }, (_, k) => `<i class="${k < pkgIdx ? 'on' : ''}"></i>`).join('')}</div>
-          <div class="wm">${PEAKS('#fff', 90)}<span>Desert<small>Peax</small></span></div>
-          <div class="txt" style="bottom:300px">
-            <div class="badge b">חבילה ${s.badge}</div>
-            <span class="line l" style="font-size:150px;margin-top:26px">${s.title}</span>
-            <div class="bar r" style="width:260px;margin:26px 0 30px auto"></div>
-            <div class="sub s">${s.subtitle}</div>
-          </div>`;
-      } else if (s.kind === 'proof') {
-        body = `<div class="txt" style="top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;text-align:center">
-          ${s.words.map((w, j) => `<span class="line w" style="font-size:${j === 2 ? 150 : 190}px;${j === 2 ? 'color:var(--gold)' : ''}">${w}</span>`).join('')}
-          <div class="sub n" style="margin-top:60px;font-size:44px">${s.note}</div>
-        </div>`;
-      }
-      h = `<div class="scene"><div class="bg" style="background-image:url('${encodeURI(s.image)}')"></div><div class="shade" style="background:${shade}"></div>${s.fit === 'contain' ? `<img class="fg" src="${encodeURI(s.image)}">` : ''}${body}</div>`;
-    }
-    const node = el(h);
-    stage.appendChild(node);
-    if (s.fit === 'contain') node.querySelector('.bg').style.filter = 'blur(40px) brightness(.7)';
-    scenes.push({ cfg: s, node, bg: node.querySelector('.bg'), fg: node.querySelector('.fg') });
-  });
-  return TOTAL;
+  C = cfg; const I = cfg.images, T = cfg.text;
+
+  scene('hook', img(I.hook, 'ext') + img(I.hook, 'soft main') + `<div class="shade top"></div>` +
+    lines(T.hook, '', 'top:300px', [112, 112]) + svg(`<path class="sweep" stroke-width="5"/>`));
+
+  scene('brand', img(I.brand, 'ext') + img(I.brand, 'soft main') + `<div class="shade" style="background:rgba(0,0,0,.38)"></div>` +
+    `<img class="logo" src="${encodeURI(I.logo)}" style="top:420px">` +
+    lines([T.brand], '', 'top:760px;text-align:center', 58) +
+    svg(`<path class="mark" stroke-width="7"/><path class="edge" stroke-width="5"/>`));
+
+  scene('pair', img(I.pair, 'ext') + img(I.pair, 'soft main') + `<div class="shade top"></div>` +
+    lines(T.pair, '', 'top:300px', [112, 112]) + svg(`<path class="under" stroke-width="5"/>`));
+
+  scene('four', img(I.four, 'ext') + img(I.four, 'soft main') + `<div class="shade top"></div>` +
+    lines(T.four, '', 'top:300px', [112, 112]));
+
+  scene('mattress', img(I.mattress, 'ext') + img(I.mattress, 'main') +
+    lines(T.mattress, 'dark', 'top:300px', [104, 104]) + svg(`<path class="under" stroke-width="5"/>`));
+
+  scene('oasis', img(I.camp, 'main') + svg([0, 1, 2, 3, 4].map(k => `<path class="bgtopo" stroke-width="2.5" d="${wavy(-60, 250 + k * 70, 1140, 230 + k * 70, 18 + k * 3, 2.5, k)}"/>`).join('')) +
+    `<div class="shade top"></div>` + lines(T.oasis, '', 'top:300px', [96, 132]));
+
+  T.quality.forEach((w, k) => scene('q' + k, img(I['q' + (k + 1)], 'main') + `<div class="shade" style="background:rgba(0,0,0,.28)"></div>` +
+    lines([w], '', 'top:640px;text-align:center', k === 2 ? 170 : 210)));
+
+  scene('hero', img(I.camp, 'ext') + img(I.camp, 'soft main') + `<div class="shade top"></div>` +
+    lines(T.hero, '', 'top:300px', [84, 84]) + svg(`<path class="sweep" stroke-width="5"/>`));
+
+  const E = T.end;
+  scene('end', img(I.camp, 'ext') + `<div class="shade" style="background:rgba(0,0,0,.35)"></div>` +
+    svg([0, 1, 2, 3, 4, 5, 6].map(k => `<path class="conv" stroke-width="3"/>`).join('')) +
+    `<img class="logo" src="${encodeURI(I.logo)}" style="top:470px">` +
+    `<div class="t" style="top:780px;text-align:center"><span class="ln tag" style="font-size:66px">${E.tagline}</span></div>` +
+    `<div class="t" style="top:950px;text-align:center;font-weight:600;text-shadow:none">
+       <span class="ln disc" style="font-size:42px;color:var(--sand)">${E.discover}</span>
+       <span class="ln site" style="font-size:60px;margin-top:10px;direction:ltr">${E.site}</span>
+       <span class="ln btnw" style="margin-top:44px"><span class="cta-btn">${E.button}</span></span></div>`);
+
+  document.getElementById('stage').appendChild($(`<div class="blob" id="blob"></div>`));
+  return cfg.duration;
 }
 
-// Moves every element to its state at time t (seconds). Pure function of t → frame-exact rendering.
+// ─── ציר הזמן: seek(t) קובע את מצב כל אלמנט בזמן t (רינדור פריים-מדויק) ───
+function show(id, on) { S[id].style.visibility = on ? 'visible' : 'hidden'; }
+const q = (id, sel) => S[id].querySelector(sel);
+const qa = (id, sel) => [...S[id].querySelectorAll(sel)];
+
+// חשיפת טקסט מאחורי קו טופוגרפי שעובר מימין לשמאל
+function sweepReveal(id, ln, path, t0, t, dur = 0.55) {
+  const x = eInOut(seg(t, t0, dur));
+  const r = ln.getBoundingClientRect(), right = r.right + 30, left = r.left - 40;
+  const lx = lerp(right, left, x);
+  ln.style.clipPath = `inset(-20px 0 -40px ${Math.max(0, lx - r.left).toFixed(1)}px)`;
+  if (path && t >= t0 - 0.01 && t <= t0 + dur + 0.2) {
+    path.setAttribute('d', wavy(lx, r.top - 50, lx - 30, r.bottom + 50, 10, 1.5, t * 3, 24));
+    path.style.opacity = 1 - seg(t, t0 + dur - 0.05, 0.2);
+  }
+}
+function slideIn(ln, t0, t, from, dur = 0.38) {
+  const e = eQuint(seg(t, t0, dur));
+  ln.style.opacity = e > 0 ? 1 : 0;
+  ln.style.transform = `translateX(${(1 - e) * from}px)`;
+  ln.style.clipPath = 'none';
+}
+
 function seek(t) {
-  const flash = document.getElementById('flash');
-  let flashA = 0;
-  scenes.forEach((sc, i) => {
-    const s = sc.cfg, a = starts[i], d = s.duration, lt = t - a;
-    const XF = 0.18; // crossfade length
-    const visible = lt >= -XF && lt < d;
-    sc.node.style.opacity = !visible ? 0 : (lt < 0 ? ease((lt + XF) / XF) : 1);
-    sc.node.style.zIndex = i;
-    if (!visible) return;
-    const p = clamp(lt / d);
-    if (lt >= 0 && lt < 0.12 && i > 0 && s.kind !== 'logo') flashA = Math.max(flashA, 0.35 * (1 - lt / 0.12));
+  const blob = document.getElementById('blob'); blob.style.visibility = 'hidden';
 
-    if (sc.bg) {
-      // punchy zoom: fast push-in at the cut, then slow drift
-      const z = 1.18 - 0.1 * ease(lt / 0.5) + 0.05 * p;
-      const dx = (i % 2 ? -1 : 1) * 24 * p;
-      sc.bg.style.transform = `translateX(${dx}px) scale(${z})`;
-      if (sc.fg) sc.fg.style.transform = `scale(${1.08 - 0.08 * ease(lt / 0.5) + 0.04 * p})`;
-      if (s.kind === 'hook') sc.bg.style.filter = `saturate(${0.55 + 0.1 * p}) contrast(1.05)`;
-    }
-    const q = (sel) => sc.node.querySelectorAll(sel);
-    const slide = (node, st, dur = 0.4, dist = 80) => {
-      const e = ease(seg(lt, st, dur));
-      node.style.opacity = e; node.style.transform = `translateY(${(1 - e) * dist}px)`;
-    };
-    if (s.kind === 'hook' || s.kind === 'answer') {
-      q('.k').forEach(n => slide(n, 0.1, 0.4, 30));
-      q('.l').forEach((n, j) => slide(n, 0.15 + j * 0.45, 0.45, 100));
-    } else if (s.kind === 'package') {
-      q('.b').forEach(n => { const e = easeBack(seg(lt, 0.05, 0.35)); n.style.transform = `scale(${e})`; n.style.opacity = clamp(e); });
-      q('.l').forEach(n => slide(n, 0.15, 0.4, 120));
-      q('.r').forEach(n => n.style.transform = `scaleX(${ease(seg(lt, 0.35, 0.4))})`);
-      q('.s').forEach(n => slide(n, 0.45, 0.4, 40));
-    } else if (s.kind === 'proof') {
-      q('.w').forEach((n, j) => {
-        const e = easeBack(seg(lt, 0.05 + j * 0.42, 0.3));
-        n.style.opacity = clamp(e * 1.2); n.style.transform = `scale(${1.6 - 0.6 * e})`;
-        if (lt >= 0.05 + j * 0.42 && lt < 0.05 + j * 0.42 + 0.08) flashA = Math.max(flashA, 0.18);
-      });
-      q('.n').forEach(n => slide(n, 1.35, 0.4, 30));
-    } else if (s.kind === 'logo') {
-      const mark = sc.node.querySelector('.mark'), div = sc.node.querySelector('.divider'), word = sc.node.querySelector('.word');
-      const path = mark.querySelector('path'); const L = path.getTotalLength();
-      path.style.strokeDasharray = L; path.style.strokeDashoffset = L * (1 - ease(seg(lt, 0.05, 0.7)));
-      div.style.transform = `scaleY(${ease(seg(lt, 0.3, 0.35))})`;
-      const we = ease(seg(lt, 0.45, 0.5)); word.style.opacity = we; word.style.transform = `translateX(${(1 - we) * -60}px)`;
-      slide(sc.node.querySelector('.tagline'), 0.9, 0.45, 30);
-      const ce = easeBack(seg(lt, 1.2, 0.4)); const cta = sc.node.querySelector('.cta');
-      cta.style.opacity = clamp(ce); cta.style.transform = `scale(${0.7 + 0.3 * ce})`;
-    }
+  // 0:00–2:00 HOOK — push-in לנוף; טקסט נחשף מאחורי קו טופוגרפי
+  show('hook', t < 2.35);
+  if (t < 2.35) {
+    const [a, b] = qa('hook', 'img'); const z = 1.7 + 0.18 * eOut(t / 2.3);
+    cam(a, .5, .5, 1); cam(b, .52, .5, z, 'soft', 140);
+    const L = qa('hook', '.ln'), p = q('hook', '.sweep');
+    L[1].style.clipPath = 'inset(0 0 0 100%)';
+    if (t < 0.95) sweepReveal('hook', L[0], p, 0.2, t, 0.6); else { L[0].style.clipPath = 'none'; sweepReveal('hook', L[1], p, 0.95, t, 0.55); }
+  }
+
+  // 2:00–5:00 מותג — מסכת "חול" גלית עולה מלמטה, לוגו מצויר בקו
+  show('brand', t >= 1.8 && t < 5.05);
+  if (t >= 1.8 && t < 5.05) {
+    const [a, b] = qa('brand', 'img.cam'); const lt = t - 2;
+    cam(a, .5, .5, 1); cam(b, .5, .45, 1.62 + 0.1 * clamp(lt / 3), 'soft', 280);
+    const m = eInOut(seg(t, 1.8, 0.5)), edge = lerp(H + 80, -120, m);
+    let poly = `0px ${H}px, ${W}px ${H}px`;
+    for (let i = 24; i >= 0; i--) { const x = W * i / 24; poly += `, ${x}px ${(edge + 40 * Math.sin(i / 24 * Math.PI * 3 + 1)).toFixed(1)}px`; }
+    S.brand.style.clipPath = m < 1 ? `polygon(${poly})` : 'none';
+    const ep = q('brand', '.edge');
+    ep.setAttribute('d', (() => { let d = ''; for (let i = 0; i <= 24; i++) { const x = W * i / 24; d += (i ? 'L' : 'M') + x + ' ' + (edge + 40 * Math.sin(i / 24 * Math.PI * 3 + 1)).toFixed(1); } return d; })());
+    ep.style.opacity = m < 1 ? 1 : 0;
+    // הלוגו: קו דק מצייר את ההרים ← הלוגו המלא נחשף
+    const logo = q('brand', '.logo'), mk = q('brand', '.mark');
+    const lr = { x: (W - 760) / 2, y: 420, s: 760 / 1440 };
+    mk.setAttribute('d', 'M22 295 L281 166 L341 240 L443 225 L548 305'.replace(/(\d+) (\d+)/g, (m, x, y) => `${(lr.x + x * lr.s).toFixed(1)} ${(lr.y + y * lr.s).toFixed(1)}`));
+    draw(mk, eInOut(seg(t, 2.3, 0.6)));
+    const r = eInOut(seg(t, 2.8, 0.45));
+    mk.style.opacity = 1 - seg(t, 3.0, 0.3);
+    logo.style.clipPath = `inset(0 ${(100 - r * 100).toFixed(2)}% 0 0)`;
+    const sub = q('brand', '.ln'); const se = eOut(seg(t, 3.35, 0.5));
+    sub.style.opacity = se; sub.style.transform = `translateY(${(1 - se) * 24}px)`;
+  }
+
+  // Foreground wipe: צללית כהה חוצה קרוב למצלמה ומחליפה לזוג הכיסאות
+  if (t >= 4.65 && t < 5.35) {
+    blob.style.visibility = 'visible';
+    const x = eInOut(seg(t, 4.65, 0.7));
+    blob.style.transform = `translateX(${lerp(1300, -1300, x)}px) skewX(-8deg)`;
+    blob.style.left = '90px';
+  }
+
+  // 5:00–8:00 זוג כיסאות — push איטי, קו מסלול מתחת לכותרת
+  show('pair', t >= 5 && t < 8);
+  if (t >= 5 && t < 8) {
+    const lt = t - 5; const [a, b] = qa('pair', 'img.cam');
+    cam(a, .5, .5, 1); cam(b, .5, .55, 1.42 + 0.08 * (lt / 3), 'soft', 230);
+    const L = qa('pair', '.ln');
+    L.forEach((ln, i) => { const e = eQuint(seg(t, 5.25 + i * 0.5, 0.45)); ln.style.opacity = e ? 1 : 0; ln.style.clipPath = `inset(0 0 ${(1 - e) * 100}% 0)`; ln.style.transform = `translateY(${(1 - e) * 40}px)`; });
+    const u = q('pair', '.under'); const r = L[1].getBoundingClientRect();
+    u.setAttribute('d', wavy(r.right, r.bottom + 30, r.right - 520, r.bottom + 30, 9, 2.5, 0.6));
+    draw(u, eInOut(seg(t, 6.0, 0.7)));
+  }
+
+  // 8:00–11:00 רביעייה — match cut, פאן על כל המעגל, כניסה לתוך האוהל
+  show('four', t >= 8 && t < 11.05);
+  if (t >= 8 && t < 11.05) {
+    const lt = t - 8; const [a, b] = qa('four', 'img.cam');
+    const punch = 1 + 0.06 * (1 - eOut(seg(t, 8, 0.25)));
+    const zin = eInOut(seg(t, 10.55, 0.5));
+    const fx = lerp(lerp(.62, .45, eInOut(lt / 2.6)), .9, zin), fy = lerp(.55, .47, zin);
+    cam(a, .5, .5, 1); cam(b, fx, fy, (1.75 + 0.06 * lt) * punch * lerp(1, 3.4, zin * zin), 'soft', 170);
+    b.style.filter = `blur(${(zin * 14).toFixed(1)}px) brightness(${1 + zin * 0.35})`;
+    const L = qa('four', '.ln');
+    slideIn(L[0], 8.2, t, -140); slideIn(L[1], 8.62, t, 140);
+    L.forEach(ln => { ln.style.opacity = (ln.style.opacity * (1 - seg(t, 10.45, 0.2))).toString(); });
+  }
+
+  // 11:00–14:00 מזרן — ממשיכים "לתוך האוהל": מתחילים קרוב ומטושטש ומתייצבים
+  show('mattress', t >= 11 && t < 14);
+  if (t >= 11 && t < 14) {
+    const lt = t - 11; const [a, b] = qa('mattress', 'img.cam');
+    const settle = eOut(seg(t, 11, 0.6));
+    cam(a, .5, .5, 1); cam(b, .52, .62, lerp(1.9, 1.32, settle) + 0.08 * (lt / 3), 'soft', 320);
+    const dark = seg(t, 13.62, 0.38);
+    b.style.filter = a.style.filter = `blur(${((1 - settle) * 14).toFixed(1)}px) brightness(${(1.25 - 0.25 * settle) * (1 - dark)})`;
+    a.style.filter = `blur(60px) brightness(${1 - dark})`;
+    const L = qa('mattress', '.ln');
+    L.forEach((ln, i) => sweepReveal('mattress', ln, null, 11.35 + i * 0.45, t, 0.5));
+    L.forEach(ln => ln.style.opacity = 1 - dark);
+    const u = q('mattress', '.under'); const r = L[1].getBoundingClientRect();
+    u.setAttribute('d', wavy(r.right, r.bottom + 28, r.right - 420, r.bottom + 28, 8, 2, 1.2));
+    draw(u, eInOut(seg(t, 12.2, 0.7))); u.style.opacity = 1 - dark;
+  }
+
+  // 14:00–17:00 Oasis — האוהל עולה מתוך החשיכה (Exposure reveal) + קווי טופוגרפיה עדינים
+  show('oasis', t >= 14 && t < 17);
+  if (t >= 14 && t < 17) {
+    const lt = t - 14; const im = q('oasis', 'img');
+    cam(im, .66, .6, 1.04 + 0.08 * (lt / 3));
+    const ex = eOut(seg(t, 14, 1.0));
+    im.style.filter = `brightness(${(0.05 + 0.95 * ex).toFixed(3)}) contrast(${1 + 0.15 * (1 - ex)})`;
+    qa('oasis', '.bgtopo').forEach((p, k) => { p.style.opacity = 0.14 * ex; p.style.transform = `translateX(${-lt * (12 + k * 4)}px)`; });
+    const L = qa('oasis', '.ln');
+    const e0 = eOut(seg(t, 14.45, 0.5)); L[0].style.opacity = e0; L[0].style.transform = `translateY(${(1 - e0) * 30}px)`;
+    const e1 = eQuint(seg(t, 15.15, 0.45)); L[1].style.opacity = e1 ? 1 : 0; L[1].style.clipPath = `inset(0 0 ${(1 - e1) * 100}% 0)`; L[1].style.transform = `translateY(${(1 - e1) * 60}px)`;
+  }
+
+  // 17:00–19:40 איכות — Hard cuts על הביט, מילה אחת בכל קאט
+  const qt = [[17.0, 17.8, '.5', '.74', 1.9], [17.8, 18.6, '.42', '.5', 1.35], [18.6, 19.4, '.5', '.55', 1.12]];
+  qt.forEach(([a, b, fx, fy, z], k) => {
+    const on = t >= a && t < b; show('q' + k, on); if (!on) return;
+    cam(q('q' + k, 'img'), +fx, +fy, z + 0.05 * ((t - a) / 0.8));
+    const w = q('q' + k, '.ln'); const e = eQuint(seg(t, a, 0.14));
+    w.style.transform = `scale(${1.1 - 0.1 * e})`; w.style.opacity = e ? 1 : 0;
   });
-  flash.style.opacity = flashA;
+
+  // 19:40–22:00 כל המחנה — המצלמה מתרחקת, ואז עולה לשמיים
+  show('hero', t >= 19.4 && t < 22.35);
+  if (t >= 19.4 && t < 22.35) {
+    const [a, b] = qa('hero', 'img.cam');
+    const back = eInOut(seg(t, 19.4, 2.0)), up = eInOut(seg(t, 21.55, 0.7));
+    cam(a, .5, lerp(.5, .1, up), 1); cam(b, lerp(.66, .5, back), lerp(.62, .5, back) - 0.45 * up, lerp(2.0, 1.06, back), 'soft', 220);
+    b.style.filter = `blur(${(up * 22).toFixed(1)}px)`;
+    const L = qa('hero', '.ln'), p = q('hero', '.sweep');
+    L[1].style.clipPath = 'inset(0 0 0 100%)';
+    if (t < 20.35) sweepReveal('hero', L[0], p, 19.6, t, 0.55); else { L[0].style.clipPath = 'none'; sweepReveal('hero', L[1], p, 20.35, t, 0.55); }
+    L.forEach(ln => ln.style.opacity = 1 - seg(t, 21.5, 0.3));
+  }
+
+  // 22:00–25:00 END CARD — קווי טופוגרפיה מתכנסים למרכז וממנו נחשף הלוגו
+  show('end', t >= 21.9);
+  if (t >= 21.9) {
+    const bg = q('end', 'img.cam'); cam(bg, .5, .08, 1.15);
+    S.end.style.opacity = eOut(seg(t, 21.9, 0.4));
+    const cy = 590; // מרכז הלוגו
+    qa('end', '.conv').forEach((p, k) => {
+      const off = (k - 3) * 150, conv = eInOut(seg(t, 22.35, 0.45));
+      const y = cy + off * (1 - conv);
+      p.setAttribute('d', wavy(k % 2 ? W + 40 : -40, y, k % 2 ? -40 : W + 40, y, 16 * (1 - conv) + 2, 2 + k * 0.3, k * 0.9));
+      draw(p, eOut(seg(t, 22.0 + k * 0.03, 0.45)));
+      p.style.opacity = (0.9 - 0.5 * Math.abs(k - 3) / 3) * (1 - seg(t, 22.72, 0.2));
+    });
+    const logo = q('end', '.logo'); const r = eInOut(seg(t, 22.72, 0.45));
+    logo.style.clipPath = `inset(0 ${(50 - r * 50).toFixed(2)}% 0 ${(50 - r * 50).toFixed(2)}%)`;
+    logo.style.transform = `translateX(-50%) scale(${1.04 - 0.04 * r})`;
+    const fadeUp = (sel, a0) => { const n = q('end', sel), e = eOut(seg(t, a0, 0.45)); n.style.opacity = e; n.style.transform = `translateY(${(1 - e) * 22}px)`; };
+    fadeUp('.tag', 23.2); fadeUp('.disc', 23.6); fadeUp('.site', 23.75); fadeUp('.btnw', 23.95);
+    // CTA: תזוזה אחת עדינה של 4px + Glow קצר (לא pulse אינסופי)
+    const btn = q('end', '.cta-btn'); const n = Math.sin(Math.PI * seg(t, 24.3, 0.4));
+    btn.style.transform = `translateX(${(-4 * n).toFixed(2)}px)`;
+    btn.style.boxShadow = `0 0 ${(40 * n).toFixed(1)}px rgba(201,168,76,${(0.8 * n).toFixed(2)})`;
+  }
 }
 
-window.PROMO = { build, seek, get total() { return TOTAL; } };
+window.PROMO = { build, seek };
 
-// Live preview when opened directly in a browser (render.js passes ?render=1)
+// תצוגה חיה בדפדפן (render.js מוסיף ?render=1)
 if (!location.search.includes('render')) {
   fetch('promo-config.json').then(r => r.json()).then(cfg => {
-    build(cfg);
-    document.body.style.transform = `scale(${Math.min(innerWidth / 1080, innerHeight / 1920)})`;
-    document.body.style.transformOrigin = '0 0';
+    const total = build(cfg);
+    document.body.style.transform = `scale(${Math.min(innerWidth / W, innerHeight / H)})`; document.body.style.transformOrigin = '0 0';
     const t0 = performance.now();
-    const loop = () => { seek(((performance.now() - t0) / 1000) % TOTAL); requestAnimationFrame(loop); };
-    loop();
+    const loop = () => { seek(((performance.now() - t0) / 1000) % total); requestAnimationFrame(loop); }; setTimeout(loop, 500);
   });
 }
 </script>

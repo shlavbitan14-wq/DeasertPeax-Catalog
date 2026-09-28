@@ -2,66 +2,34 @@
   "width": 1080,
   "height": 1920,
   "fps": 30,
-  "site": "desertpeax.co.il",
-  "scenes": [
-    {
-      "kind": "hook",
-      "duration": 2.6,
-      "image": "../תמונות/photo_5771430594440007136_y.jpg",
-      "lines": ["יוצאים לשטח", "עם ציוד שלא מחזיק?"]
-    },
-    {
-      "kind": "answer",
-      "duration": 2.4,
-      "image": "../תמונות/photo_5771430594440007135_y.jpg",
-      "kicker": "DESERT PEAX",
-      "lines": ["חבילות ציוד שטח", "חזקות במיוחד"]
-    },
-    {
-      "kind": "package",
-      "duration": 2.1,
-      "image": "../תמונות/photo_5771754280355303088_y.jpg",
-      "badge": "01",
-      "title": "זוג כיסאות",
-      "subtitle": "שלדת מתכת יציבה · תאים לשתייה"
-    },
-    {
-      "kind": "package",
-      "duration": 2.1,
-      "image": "../תמונות/photo_5771430594440007138_y.jpg",
-      "fit": "contain",
-      "badge": "02",
-      "title": "רביעיית כיסאות",
-      "subtitle": "כל המשפחה סביב המדורה"
-    },
-    {
-      "kind": "package",
-      "duration": 2.1,
-      "image": "../תמונות/photo_5771754280355303037_y.jpg",
-      "badge": "03",
-      "title": "מזרני שטח",
-      "subtitle": "עובי 9 ס״מ · ניפוח וריקון מהירים"
-    },
-    {
-      "kind": "package",
-      "duration": 2.1,
-      "image": "../תמונות/photo_5771754280355303064_y.jpg",
-      "badge": "04",
-      "title": "אוהלים",
-      "subtitle": "Oasis 8 · שני חדרים · הקמה בכ־4 דק׳"
-    },
-    {
-      "kind": "proof",
-      "duration": 2.2,
-      "image": "../תמונות/photo_5771754280355303070_y.jpg",
-      "words": ["חזק.", "עמיד.", "מוכן לשטח."],
-      "note": "משלוחים לכל הארץ · החזרה עד 14 יום"
-    },
-    {
-      "kind": "logo",
-      "duration": 2.8,
-      "tagline": "Gear Up Your Freedom",
-      "cta": "DesertPeax.co.il"
+  "duration": 25,
+  "audio": "soundtrack.wav",
+  "images": {
+    "hook": "../תמונות/photo_5771430594440007136_y.jpg",
+    "brand": "../תמונות/photo_5771430594440007135_y.jpg",
+    "pair": "../תמונות/photo_5771754280355303088_y.jpg",
+    "four": "../תמונות/photo_5771430594440007138_y.jpg",
+    "mattress": "prep/out/mattress-clean.jpg",
+    "camp": "prep/out/camp-clean.jpg",
+    "q1": "assets/05_chair_main.webp",
+    "q2": "assets/06_chair_detail.webp",
+    "q3": "../תמונות/photo_5771754280355303087_y.jpg",
+    "logo": "prep/out/logo-white.png"
+  },
+  "text": {
+    "hook": ["לא צריך להתפשר", "כדי לצאת לשטח."],
+    "brand": "ציוד שטח שנבנה בשביל ליהנות באמת.",
+    "pair": ["יושבים בנוחות.", "בכל מקום."],
+    "four": ["יותר מקום.", "יותר רגעים ביחד."],
+    "mattress": ["כי גם בשטח", "מגיע לכם לישון טוב."],
+    "oasis": ["המחנה שלכם.", "בדיוק כמו שצריך."],
+    "quality": ["חזק.", "עמיד.", "מוכן לשטח."],
+    "hero": ["כל מה שצריך בשביל לצאת.", "כל מה שצריך בשביל ליהנות."],
+    "end": {
+      "tagline": "יוצאים לשטח. נשארים בנוחות.",
+      "discover": "גלו את כל הציוד באתר",
+      "site": "desertpeax.co.il",
+      "button": "לצפייה במוצרים ←"
     }
-  ]
+  }
 }

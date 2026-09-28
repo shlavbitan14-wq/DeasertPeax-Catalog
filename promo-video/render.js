@@ -28,8 +28,7 @@ const frameArg = process.argv.indexOf('--frame');
   await page.evaluate(async () => {
     await document.fonts.load('800 100px Assistant', 'אבג');
     await document.fonts.ready;
-    const urls = [...document.querySelectorAll('.bg')].map(b => b.style.backgroundImage.slice(5, -2));
-    await Promise.all(urls.map(u => new Promise(res => { const i = new Image(); i.onload = i.onerror = res; i.src = u; })));
+    await Promise.all([...document.images].map(i => i.decode().catch(() => { throw new Error('image failed: ' + i.src); })));
   });
 
   if (frameArg > -1) {
@@ -44,8 +43,11 @@ const frameArg = process.argv.indexOf('--frame');
 
   const frames = Math.round(total * cfg.fps);
   console.log(`מרנדר ${frames} פריימים (${total.toFixed(1)} שניות)...`);
+  const audio = cfg.audio && path.join(DIR, cfg.audio);
+  if (audio && !fs.existsSync(audio)) require('./sound.js');
   const ff = spawn(ffmpegPath, [
     '-y', '-f', 'image2pipe', '-framerate', String(cfg.fps), '-c:v', 'mjpeg', '-i', '-',
+    ...(audio ? ['-i', audio, '-c:a', 'aac', '-b:a', '192k', '-shortest'] : []),
     '-c:v', 'libx264', '-preset', 'slow', '-crf', '18', '-pix_fmt', 'yuv420p', '-movflags', '+faststart',
     OUT,
   ], { stdio: ['pipe', 'ignore', 'inherit'] });
