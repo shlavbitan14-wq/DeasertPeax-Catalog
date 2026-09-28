@@ -1,0 +1,67 @@
+{
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "site": "desertpeax.co.il",
+  "scenes": [
+    {
+      "kind": "hook",
+      "duration": 2.6,
+      "image": "../תמונות/photo_5771430594440007136_y.jpg",
+      "lines": ["יוצאים לשטח", "עם ציוד שלא מחזיק?"]
+    },
+    {
+      "kind": "answer",
+      "duration": 2.4,
+      "image": "../תמונות/photo_5771430594440007135_y.jpg",
+      "kicker": "DESERT PEAX",
+      "lines": ["חבילות ציוד שטח", "חזקות במיוחד"]
+    },
+    {
+      "kind": "package",
+      "duration": 2.1,
+      "image": "../תמונות/photo_5771754280355303088_y.jpg",
+      "badge": "01",
+      "title": "זוג כיסאות",
+      "subtitle": "שלדת מתכת יציבה · תאים לשתייה"
+    },
+    {
+      "kind": "package",
+      "duration": 2.1,
+      "image": "../תמונות/photo_5771430594440007138_y.jpg",
+      "fit": "contain",
+      "badge": "02",
+      "title": "רביעיית כיסאות",
+      "subtitle": "כל המשפחה סביב המדורה"
+    },
+    {
+      "kind": "package",
+      "duration": 2.1,
+      "image": "../תמונות/photo_5771754280355303037_y.jpg",
+      "badge": "03",
+      "title": "מזרני שטח",
+      "subtitle": "עובי 9 ס״מ · ניפוח וריקון מהירים"
+    },
+    {
+      "kind": "package",
+      "duration": 2.1,
+      "image": "../תמונות/photo_5771754280355303064_y.jpg",
+      "badge": "04",
+      "title": "אוהלים",
+      "subtitle": "Oasis 8 · שני חדרים · הקמה בכ־4 דק׳"
+    },
+    {
+      "kind": "proof",
+      "duration": 2.2,
+      "image": "../תמונות/photo_5771754280355303070_y.jpg",
+      "words": ["חזק.", "עמיד.", "מוכן לשטח."],
+      "note": "משלוחים לכל הארץ · החזרה עד 14 יום"
+    },
+    {
+      "kind": "logo",
+      "duration": 2.8,
+      "tagline": "Gear Up Your Freedom",
+      "cta": "DesertPeax.co.il"
+    }
+  ]
+}

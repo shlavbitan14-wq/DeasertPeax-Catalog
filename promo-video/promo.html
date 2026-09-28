@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Desert Peax — סרטון פרסומת</title>
+<style>
+@font-face { font-family: 'Assistant'; font-weight: 200 800; src: url(fonts/assistant-hebrew.woff2) format('woff2'); unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
+@font-face { font-family: 'Assistant'; font-weight: 200 800; src: url(fonts/assistant-latin.woff2) format('woff2'); }
+:root {
+  --ink: #1A1A1A; --sand: #F0E8DC; --cream: #F7F4EF; --label: #A89070; --gold: #C9A84C;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; font-family: 'Assistant', 'DejaVu Sans', sans-serif; }
+#stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+.scene { position: absolute; inset: 0; opacity: 0; overflow: hidden; }
+.bg { position: absolute; inset: -2%; background-size: cover; background-position: center; will-change: transform; }
+.shade { position: absolute; inset: 0; }
+.txt { position: absolute; left: 70px; right: 70px; color: #fff; text-align: right; }
+.line { display: block; font-weight: 800; line-height: 1.02; letter-spacing: -1px; text-shadow: 0 6px 30px rgba(0,0,0,.45); }
+.kicker { font-weight: 700; letter-spacing: 10px; font-size: 40px; color: var(--gold); direction: ltr; text-align: right; }
+.badge { display: inline-block; font-weight: 800; font-size: 44px; color: var(--ink); background: var(--gold); padding: 6px 26px; border-radius: 10px; direction: ltr; }
+.bar { height: 10px; background: var(--gold); border-radius: 6px; transform-origin: right center; }
+.sub { font-weight: 600; font-size: 50px; color: var(--sand); text-shadow: 0 4px 20px rgba(0,0,0,.6); }
+.progress { position: absolute; top: 70px; left: 70px; right: 70px; display: flex; gap: 12px; direction: ltr; }
+.progress i { flex: 1; height: 8px; border-radius: 4px; background: rgba(255,255,255,.28); }
+.progress i.on { background: var(--gold); }
+.wm { position: absolute; top: 110px; right: 70px; display: flex; align-items: center; gap: 16px; direction: ltr; color: #fff; font-weight: 800; font-size: 40px; line-height: .9; text-shadow: 0 3px 16px rgba(0,0,0,.5); }
+.wm small { display: block; font-weight: 700; color: var(--sand); }
+.fg { position: absolute; left: 0; width: 1080px; top: 470px; border-radius: 0; box-shadow: 0 30px 80px rgba(0,0,0,.55); will-change: transform; }
+.flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }
+/* logo scene */
+.logo-wrap { position: absolute; inset: 0; background: var(--sand); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.logo { display: flex; align-items: center; gap: 36px; direction: ltr; }
+.logo .divider { width: 8px; height: 250px; background: var(--ink); transform-origin: center; }
+.logo .word { font-weight: 800; font-size: 150px; line-height: .92; color: var(--ink); letter-spacing: -2px; }
+.logo .word .peax { color: #8A8378; display: block; }
+.tagline { margin-top: 70px; font-weight: 600; font-size: 48px; letter-spacing: 6px; color: var(--label); direction: ltr; }
+.cta { margin-top: 90px; font-weight: 800; font-size: 64px; color: var(--cream); background: var(--ink); padding: 26px 60px; border-radius: 22px; direction: ltr; }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<div class="flash" id="flash"></div>
+<script>
+const PEAKS = (c, w) => `<svg width="${w}" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 34 L40 12 L54 22 L70 8 L100 30 M40 12 L58 34" stroke="${c}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const ease = x => 1 - Math.pow(1 - clamp(x), 3);           // easeOutCubic
+const easeBack = x => { x = clamp(x); const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const seg = (t, a, d) => clamp((t - a) / d);                 // 0..1 progress over [a, a+d]
+
+let CFG, scenes = [], starts = [], TOTAL = 0;
+
+function el(html) { const d = document.createElement('div'); d.innerHTML = html.trim(); return d.firstChild; }
+
+function build(cfg) {
+  CFG = cfg;
+  const stage = document.getElementById('stage');
+  const nPkg = cfg.scenes.filter(s => s.kind === 'package').length;
+  let pkgIdx = 0;
+  cfg.scenes.forEach((s, i) => {
+    starts.push(TOTAL); TOTAL += s.duration;
+    let h = '';
+    if (s.kind === 'logo') {
+      h = `<div class="scene"><div class="logo-wrap">
+        <div class="logo"><span class="mark">${PEAKS('#1A1A1A', 300)}</span><span class="divider"></span>
+          <span class="word">Desert<span class="peax">Peax</span></span></div>
+        <div class="tagline">${s.tagline}</div>
+        <div class="cta">${s.cta}</div></div></div>`;
+    } else {
+      const shade = {
+        hook: 'linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.15) 40%, rgba(0,0,0,.8) 100%)',
+        answer: 'linear-gradient(180deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,.1) 45%, rgba(0,0,0,.78) 100%)',
+        package: 'linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 22%, rgba(0,0,0,0) 50%, rgba(0,0,0,.85) 100%)',
+        proof: 'rgba(0,0,0,.55)',
+      }[s.kind];
+      let body = '';
+      if (s.kind === 'hook' || s.kind === 'answer') {
+        body = `<div class="txt" style="bottom:330px">
+          ${s.kicker ? `<div class="kicker k">${s.kicker}</div>` : ''}
+          ${s.lines.map((l, j) => `<span class="line l" style="font-size:${j ? 108 : 124}px;${j && s.kind === 'answer' ? 'color:var(--gold)' : ''}">${l}</span>`).join('')}
+        </div>`;
+      } else if (s.kind === 'package') {
+        pkgIdx++;
+        body = `<div class="progress">${Array.from({ length: nPkg }, (_, k) => `<i class="${k < pkgIdx ? 'on' : ''}"></i>`).join('')}</div>
+          <div class="wm">${PEAKS('#fff', 90)}<span>Desert<small>Peax</small></span></div>
+          <div class="txt" style="bottom:300px">
+            <div class="badge b">חבילה ${s.badge}</div>
+            <span class="line l" style="font-size:150px;margin-top:26px">${s.title}</span>
+            <div class="bar r" style="width:260px;margin:26px 0 30px auto"></div>
+            <div class="sub s">${s.subtitle}</div>
+          </div>`;
+      } else if (s.kind === 'proof') {
+        body = `<div class="txt" style="top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;text-align:center">
+          ${s.words.map((w, j) => `<span class="line w" style="font-size:${j === 2 ? 150 : 190}px;${j === 2 ? 'color:var(--gold)' : ''}">${w}</span>`).join('')}
+          <div class="sub n" style="margin-top:60px;font-size:44px">${s.note}</div>
+        </div>`;
+      }
+      h = `<div class="scene"><div class="bg" style="background-image:url('${encodeURI(s.image)}')"></div><div class="shade" style="background:${shade}"></div>${s.fit === 'contain' ? `<img class="fg" src="${encodeURI(s.image)}">` : ''}${body}</div>`;
+    }
+    const node = el(h);
+    stage.appendChild(node);
+    if (s.fit === 'contain') node.querySelector('.bg').style.filter = 'blur(40px) brightness(.7)';
+    scenes.push({ cfg: s, node, bg: node.querySelector('.bg'), fg: node.querySelector('.fg') });
+  });
+  return TOTAL;
+}
+
+// Moves every element to its state at time t (seconds). Pure function of t → frame-exact rendering.
+function seek(t) {
+  const flash = document.getElementById('flash');
+  let flashA = 0;
+  scenes.forEach((sc, i) => {
+    const s = sc.cfg, a = starts[i], d = s.duration, lt = t - a;
+    const XF = 0.18; // crossfade length
+    const visible = lt >= -XF && lt < d;
+    sc.node.style.opacity = !visible ? 0 : (lt < 0 ? ease((lt + XF) / XF) : 1);
+    sc.node.style.zIndex = i;
+    if (!visible) return;
+    const p = clamp(lt / d);
+    if (lt >= 0 && lt < 0.12 && i > 0 && s.kind !== 'logo') flashA = Math.max(flashA, 0.35 * (1 - lt / 0.12));
+
+    if (sc.bg) {
+      // punchy zoom: fast push-in at the cut, then slow drift
+      const z = 1.18 - 0.1 * ease(lt / 0.5) + 0.05 * p;
+      const dx = (i % 2 ? -1 : 1) * 24 * p;
+      sc.bg.style.transform = `translateX(${dx}px) scale(${z})`;
+      if (sc.fg) sc.fg.style.transform = `scale(${1.08 - 0.08 * ease(lt / 0.5) + 0.04 * p})`;
+      if (s.kind === 'hook') sc.bg.style.filter = `saturate(${0.55 + 0.1 * p}) contrast(1.05)`;
+    }
+    const q = (sel) => sc.node.querySelectorAll(sel);
+    const slide = (node, st, dur = 0.4, dist = 80) => {
+      const e = ease(seg(lt, st, dur));
+      node.style.opacity = e; node.style.transform = `translateY(${(1 - e) * dist}px)`;
+    };
+    if (s.kind === 'hook' || s.kind === 'answer') {
+      q('.k').forEach(n => slide(n, 0.1, 0.4, 30));
+      q('.l').forEach((n, j) => slide(n, 0.15 + j * 0.45, 0.45, 100));
+    } else if (s.kind === 'package') {
+      q('.b').forEach(n => { const e = easeBack(seg(lt, 0.05, 0.35)); n.style.transform = `scale(${e})`; n.style.opacity = clamp(e); });
+      q('.l').forEach(n => slide(n, 0.15, 0.4, 120));
+      q('.r').forEach(n => n.style.transform = `scaleX(${ease(seg(lt, 0.35, 0.4))})`);
+      q('.s').forEach(n => slide(n, 0.45, 0.4, 40));
+    } else if (s.kind === 'proof') {
+      q('.w').forEach((n, j) => {
+        const e = easeBack(seg(lt, 0.05 + j * 0.42, 0.3));
+        n.style.opacity = clamp(e * 1.2); n.style.transform = `scale(${1.6 - 0.6 * e})`;
+        if (lt >= 0.05 + j * 0.42 && lt < 0.05 + j * 0.42 + 0.08) flashA = Math.max(flashA, 0.18);
+      });
+      q('.n').forEach(n => slide(n, 1.35, 0.4, 30));
+    } else if (s.kind === 'logo') {
+      const mark = sc.node.querySelector('.mark'), div = sc.node.querySelector('.divider'), word = sc.node.querySelector('.word');
+      const path = mark.querySelector('path'); const L = path.getTotalLength();
+      path.style.strokeDasharray = L; path.style.strokeDashoffset = L * (1 - ease(seg(lt, 0.05, 0.7)));
+      div.style.transform = `scaleY(${ease(seg(lt, 0.3, 0.35))})`;
+      const we = ease(seg(lt, 0.45, 0.5)); word.style.opacity = we; word.style.transform = `translateX(${(1 - we) * -60}px)`;
+      slide(sc.node.querySelector('.tagline'), 0.9, 0.45, 30);
+      const ce = easeBack(seg(lt, 1.2, 0.4)); const cta = sc.node.querySelector('.cta');
+      cta.style.opacity = clamp(ce); cta.style.transform = `scale(${0.7 + 0.3 * ce})`;
+    }
+  });
+  flash.style.opacity = flashA;
+}
+
+window.PROMO = { build, seek, get total() { return TOTAL; } };
+
+// Live preview when opened directly in a browser (render.js passes ?render=1)
+if (!location.search.includes('render')) {
+  fetch('promo-config.json').then(r => r.json()).then(cfg => {
+    build(cfg);
+    document.body.style.transform = `scale(${Math.min(innerWidth / 1080, innerHeight / 1920)})`;
+    document.body.style.transformOrigin = '0 0';
+    const t0 = performance.now();
+    const loop = () => { seek(((performance.now() - t0) / 1000) % TOTAL); requestAnimationFrame(loop); };
+    loop();
+  });
+}
+</script>
+</body>
+</html>
